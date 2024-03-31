@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package api;
+
+message CreateCarModelRequest {
+    string name = 1;;
+}
+
+message CarModel {
+    int32 id = 1;
+    string name = 2;
+}
+
+message GetCarModelByIdRequest {
+    int32 id = 1;
+}
+
+message ListCarModelsResponse {
+    repeated CarModel items = 1;
+}
+
+message DeleteCarModelRequest {
+    int32 id = 1;
+}
+
+message CreateComponentRequest {
+    string name = 1;
+    int32 car_model_id = 2;
+    int32 parent_id = 4;
+}
+
+message Component {
+    int32 id = 1;
+    string name = 2;
+    int32 car_model_id = 3;
+    int32 parent_id = 4;
+}
+
+message ListComponentResponse {
+    repeated Component items = 1;
+}
+
+message GetTopLevelComponentsForCarModelRequest {
+    int32 car_model_id = 1;
+}
+
+message GetChildComponentsForComponentRequest {
+    int32 parent_id = 1;
+}
+
+message DeleteComponentRequest {
+    int32 id = 1;
+}
+
+message UpdateComponentRequest {
+    string name = 1;
+}
+
+message Empty {}
+
+
+service AutoCatalogService {
+    rpc CreateCarModel(CreateCarModelRequest) returns (CarModel){}
+    rpc GetCarModelById(GetCarModelByIdRequest) returns (CarModel){}
+    rpc ListCarModels(Empty) returns (ListCarModelsResponse) {}
+    rpc DeleteCarModel(DeleteCarModelRequest) returns (Empty){}
+    rpc CreateComponent(CreateComponentRequest) returns (Component){}
+    rpc GetTopLevelComponentsForCarModel(GetTopLevelComponentsForCarModelRequest) returns (ListComponentResponse){}
+    rpc GetChildComponentsForComponent(GetChildComponentsForComponentRequest) returns (ListComponentResponse){}
+    rpc DeleteComponent(DeleteComponentRequest) returns (Empty){}
+    rpc UpdateComponent(UpdateComponentRequest) returns(Component){}
+}

@@ -1,0 +1,7 @@
+bind_url = "8083"
+
+[store]
+database_host = "localhost"
+database_name = "auto_catalog_db"
+database_user = "proroker"
+database_password = "proroker"
