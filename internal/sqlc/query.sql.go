@@ -86,13 +86,13 @@ func (q *Queries) GetCarModel(ctx context.Context, id int64) (CarModel, error) {
 	return i, err
 }
 
-const getChildComponentsForComponent = `-- name: GetChildComponentsForComponent :many
+const getChildComponentsByComponent = `-- name: GetChildComponentsByComponent :many
 SELECT id, name, car_model_id, parent_id FROM components
 WHERE parent_id = $1 LIMIT 1
 `
 
-func (q *Queries) GetChildComponentsForComponent(ctx context.Context, parentID pgtype.Int4) ([]Component, error) {
-	rows, err := q.db.Query(ctx, getChildComponentsForComponent, parentID)
+func (q *Queries) GetChildComponentsByComponent(ctx context.Context, parentID pgtype.Int4) ([]Component, error) {
+	rows, err := q.db.Query(ctx, getChildComponentsByComponent, parentID)
 	if err != nil {
 		return nil, err
 	}
@@ -116,13 +116,13 @@ func (q *Queries) GetChildComponentsForComponent(ctx context.Context, parentID p
 	return items, nil
 }
 
-const getTopLevelComponentsForCarModel = `-- name: GetTopLevelComponentsForCarModel :many
+const getTopLevelComponentsByCarModel = `-- name: GetTopLevelComponentsByCarModel :many
 SELECT id, name, car_model_id, parent_id FROM components
 WHERE car_model_id = $1 LIMIT 1
 `
 
-func (q *Queries) GetTopLevelComponentsForCarModel(ctx context.Context, carModelID pgtype.Int4) ([]Component, error) {
-	rows, err := q.db.Query(ctx, getTopLevelComponentsForCarModel, carModelID)
+func (q *Queries) GetTopLevelComponentsByCarModel(ctx context.Context, carModelID pgtype.Int4) ([]Component, error) {
+	rows, err := q.db.Query(ctx, getTopLevelComponentsByCarModel, carModelID)
 	if err != nil {
 		return nil, err
 	}

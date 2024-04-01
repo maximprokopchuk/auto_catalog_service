@@ -7,10 +7,10 @@ import (
 	"net"
 
 	"github.com/BurntSushi/toml"
-	"github.com/maximprokopchuk/auto_catalog_service/internal/api"
 	"github.com/maximprokopchuk/auto_catalog_service/internal/config"
 	"github.com/maximprokopchuk/auto_catalog_service/internal/grpcserver"
 	"github.com/maximprokopchuk/auto_catalog_service/internal/store"
+	"github.com/maximprokopchuk/auto_catalog_service/pkg/api"
 	"google.golang.org/grpc"
 )
 

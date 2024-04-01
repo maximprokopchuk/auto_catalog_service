@@ -384,80 +384,80 @@ func (m *ListComponentResponse) GetItems() []*Component {
 	return nil
 }
 
-type GetTopLevelComponentsForCarModelRequest struct {
+type GetTopLevelComponentsByCarModelRequest struct {
 	CarModelId           int32    `protobuf:"varint,1,opt,name=car_model_id,json=carModelId,proto3" json:"car_model_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetTopLevelComponentsForCarModelRequest) Reset() {
-	*m = GetTopLevelComponentsForCarModelRequest{}
+func (m *GetTopLevelComponentsByCarModelRequest) Reset() {
+	*m = GetTopLevelComponentsByCarModelRequest{}
 }
-func (m *GetTopLevelComponentsForCarModelRequest) String() string { return proto.CompactTextString(m) }
-func (*GetTopLevelComponentsForCarModelRequest) ProtoMessage()    {}
-func (*GetTopLevelComponentsForCarModelRequest) Descriptor() ([]byte, []int) {
+func (m *GetTopLevelComponentsByCarModelRequest) String() string { return proto.CompactTextString(m) }
+func (*GetTopLevelComponentsByCarModelRequest) ProtoMessage()    {}
+func (*GetTopLevelComponentsByCarModelRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_6b2b0ccfa0821d94, []int{8}
 }
 
-func (m *GetTopLevelComponentsForCarModelRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetTopLevelComponentsForCarModelRequest.Unmarshal(m, b)
+func (m *GetTopLevelComponentsByCarModelRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetTopLevelComponentsByCarModelRequest.Unmarshal(m, b)
 }
-func (m *GetTopLevelComponentsForCarModelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetTopLevelComponentsForCarModelRequest.Marshal(b, m, deterministic)
+func (m *GetTopLevelComponentsByCarModelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetTopLevelComponentsByCarModelRequest.Marshal(b, m, deterministic)
 }
-func (m *GetTopLevelComponentsForCarModelRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetTopLevelComponentsForCarModelRequest.Merge(m, src)
+func (m *GetTopLevelComponentsByCarModelRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetTopLevelComponentsByCarModelRequest.Merge(m, src)
 }
-func (m *GetTopLevelComponentsForCarModelRequest) XXX_Size() int {
-	return xxx_messageInfo_GetTopLevelComponentsForCarModelRequest.Size(m)
+func (m *GetTopLevelComponentsByCarModelRequest) XXX_Size() int {
+	return xxx_messageInfo_GetTopLevelComponentsByCarModelRequest.Size(m)
 }
-func (m *GetTopLevelComponentsForCarModelRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetTopLevelComponentsForCarModelRequest.DiscardUnknown(m)
+func (m *GetTopLevelComponentsByCarModelRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetTopLevelComponentsByCarModelRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetTopLevelComponentsForCarModelRequest proto.InternalMessageInfo
+var xxx_messageInfo_GetTopLevelComponentsByCarModelRequest proto.InternalMessageInfo
 
-func (m *GetTopLevelComponentsForCarModelRequest) GetCarModelId() int32 {
+func (m *GetTopLevelComponentsByCarModelRequest) GetCarModelId() int32 {
 	if m != nil {
 		return m.CarModelId
 	}
 	return 0
 }
 
-type GetChildComponentsForComponentRequest struct {
+type GetChildComponentsByComponentRequest struct {
 	ParentId             int32    `protobuf:"varint,1,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetChildComponentsForComponentRequest) Reset()         { *m = GetChildComponentsForComponentRequest{} }
-func (m *GetChildComponentsForComponentRequest) String() string { return proto.CompactTextString(m) }
-func (*GetChildComponentsForComponentRequest) ProtoMessage()    {}
-func (*GetChildComponentsForComponentRequest) Descriptor() ([]byte, []int) {
+func (m *GetChildComponentsByComponentRequest) Reset()         { *m = GetChildComponentsByComponentRequest{} }
+func (m *GetChildComponentsByComponentRequest) String() string { return proto.CompactTextString(m) }
+func (*GetChildComponentsByComponentRequest) ProtoMessage()    {}
+func (*GetChildComponentsByComponentRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_6b2b0ccfa0821d94, []int{9}
 }
 
-func (m *GetChildComponentsForComponentRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetChildComponentsForComponentRequest.Unmarshal(m, b)
+func (m *GetChildComponentsByComponentRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetChildComponentsByComponentRequest.Unmarshal(m, b)
 }
-func (m *GetChildComponentsForComponentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetChildComponentsForComponentRequest.Marshal(b, m, deterministic)
+func (m *GetChildComponentsByComponentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetChildComponentsByComponentRequest.Marshal(b, m, deterministic)
 }
-func (m *GetChildComponentsForComponentRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetChildComponentsForComponentRequest.Merge(m, src)
+func (m *GetChildComponentsByComponentRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetChildComponentsByComponentRequest.Merge(m, src)
 }
-func (m *GetChildComponentsForComponentRequest) XXX_Size() int {
-	return xxx_messageInfo_GetChildComponentsForComponentRequest.Size(m)
+func (m *GetChildComponentsByComponentRequest) XXX_Size() int {
+	return xxx_messageInfo_GetChildComponentsByComponentRequest.Size(m)
 }
-func (m *GetChildComponentsForComponentRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetChildComponentsForComponentRequest.DiscardUnknown(m)
+func (m *GetChildComponentsByComponentRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetChildComponentsByComponentRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetChildComponentsForComponentRequest proto.InternalMessageInfo
+var xxx_messageInfo_GetChildComponentsByComponentRequest proto.InternalMessageInfo
 
-func (m *GetChildComponentsForComponentRequest) GetParentId() int32 {
+func (m *GetChildComponentsByComponentRequest) GetParentId() int32 {
 	if m != nil {
 		return m.ParentId
 	}
@@ -582,8 +582,8 @@ func init() {
 	proto.RegisterType((*CreateComponentRequest)(nil), "api.CreateComponentRequest")
 	proto.RegisterType((*Component)(nil), "api.Component")
 	proto.RegisterType((*ListComponentResponse)(nil), "api.ListComponentResponse")
-	proto.RegisterType((*GetTopLevelComponentsForCarModelRequest)(nil), "api.GetTopLevelComponentsForCarModelRequest")
-	proto.RegisterType((*GetChildComponentsForComponentRequest)(nil), "api.GetChildComponentsForComponentRequest")
+	proto.RegisterType((*GetTopLevelComponentsByCarModelRequest)(nil), "api.GetTopLevelComponentsByCarModelRequest")
+	proto.RegisterType((*GetChildComponentsByComponentRequest)(nil), "api.GetChildComponentsByComponentRequest")
 	proto.RegisterType((*DeleteComponentRequest)(nil), "api.DeleteComponentRequest")
 	proto.RegisterType((*UpdateComponentRequest)(nil), "api.UpdateComponentRequest")
 	proto.RegisterType((*Empty)(nil), "api.Empty")
@@ -592,38 +592,38 @@ func init() {
 func init() { proto.RegisterFile("auto_catalog.proto", fileDescriptor_6b2b0ccfa0821d94) }
 
 var fileDescriptor_6b2b0ccfa0821d94 = []byte{
-	// 495 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x54, 0x4d, 0x6f, 0xd3, 0x40,
-	0x10, 0xb5, 0x9b, 0x1a, 0x9a, 0x81, 0x26, 0xd2, 0x48, 0x89, 0x2a, 0x57, 0x42, 0xd1, 0x02, 0x6a,
-	0x04, 0x55, 0x0e, 0xe5, 0x04, 0x6a, 0xc5, 0x47, 0x0a, 0x55, 0x44, 0xb9, 0x18, 0x38, 0x47, 0x4b,
-	0x76, 0x04, 0x0b, 0xb6, 0x77, 0xb1, 0x37, 0x95, 0xfa, 0x93, 0xf8, 0x97, 0x28, 0xf6, 0xc6, 0xc4,
-	0x6b, 0xab, 0x09, 0xb7, 0x28, 0x33, 0x3b, 0xf3, 0xde, 0x9b, 0xf7, 0x0c, 0xc8, 0x97, 0x46, 0xcd,
-	0x17, 0xdc, 0xf0, 0x58, 0x7d, 0x9f, 0xe8, 0x4c, 0x19, 0x85, 0x1d, 0xae, 0x25, 0x7b, 0x0e, 0x83,
-	0x69, 0x46, 0xdc, 0xd0, 0x94, 0x67, 0x9f, 0x94, 0xa0, 0x38, 0xa2, 0xdf, 0x4b, 0xca, 0x0d, 0x22,
-	0xec, 0xa7, 0x3c, 0xa1, 0x23, 0x7f, 0xe4, 0x8f, 0xbb, 0x51, 0xf1, 0x9b, 0x4d, 0xe0, 0x60, 0xdd,
-	0x86, 0x3d, 0xd8, 0x93, 0xa2, 0xa8, 0x06, 0xd1, 0x9e, 0x14, 0x55, 0xff, 0xde, 0x46, 0xff, 0x18,
-	0x86, 0x57, 0x64, 0xd6, 0x4f, 0xde, 0xdd, 0xce, 0xc4, 0x7a, 0xba, 0xf3, 0x9a, 0x9d, 0xc3, 0xe0,
-	0x5a, 0xe6, 0x55, 0x6b, 0x1e, 0x51, 0xae, 0x55, 0x9a, 0x13, 0x3e, 0x86, 0x40, 0x1a, 0x4a, 0xf2,
-	0x23, 0x7f, 0xd4, 0x19, 0x3f, 0x38, 0x3b, 0x9c, 0x70, 0x2d, 0x27, 0x15, 0xd6, 0xb2, 0xc6, 0x4e,
-	0x60, 0x70, 0x49, 0x31, 0x35, 0x49, 0xb8, 0x6b, 0x7e, 0xc1, 0xd0, 0xb2, 0x55, 0x89, 0x56, 0x29,
-	0xa5, 0xe6, 0x0e, 0xba, 0x38, 0x82, 0x87, 0x0b, 0x9e, 0xcd, 0x93, 0xd5, 0xc4, 0xb9, 0x14, 0x05,
-	0xb5, 0x20, 0x82, 0x85, 0x5d, 0x32, 0x13, 0x78, 0x0c, 0x5d, 0xcd, 0x33, 0x4a, 0xcd, 0xaa, 0xbc,
-	0x5f, 0x94, 0x0f, 0xca, 0x3f, 0x66, 0x82, 0xa5, 0xd0, 0xad, 0xd6, 0xec, 0x22, 0x57, 0x63, 0x5f,
-	0xe7, 0xff, 0xf6, 0x5d, 0x58, 0x0d, 0xff, 0x51, 0xb3, 0x1a, 0x3e, 0xa9, 0x6b, 0xd8, 0x2b, 0x35,
-	0xac, 0xda, 0xac, 0x88, 0x1f, 0xe1, 0xe4, 0x8a, 0xcc, 0x17, 0xa5, 0xaf, 0xe9, 0x86, 0xe2, 0xaa,
-	0x9c, 0x7f, 0x50, 0x99, 0x2b, 0xab, 0x0b, 0xd4, 0x77, 0x81, 0xb2, 0x4b, 0x78, 0xba, 0xba, 0xfc,
-	0x0f, 0x19, 0x8b, 0xfa, 0x24, 0x57, 0xf7, 0x1a, 0x23, 0xdf, 0x61, 0x34, 0x86, 0xa1, 0xbd, 0xab,
-	0xfb, 0xcc, 0x3d, 0xec, 0x29, 0x0c, 0xbf, 0x6a, 0xb1, 0xe3, 0x61, 0xd9, 0x7d, 0x08, 0xde, 0x27,
-	0xda, 0xdc, 0x9e, 0xfd, 0x09, 0x00, 0xdf, 0x2e, 0x8d, 0x9a, 0x96, 0xc1, 0xf8, 0x4c, 0xd9, 0x8d,
-	0x5c, 0x10, 0x5e, 0x40, 0xaf, 0x1e, 0x0a, 0x0c, 0x4b, 0xcd, 0xda, 0x92, 0x12, 0xd6, 0x3d, 0xc9,
-	0x3c, 0x7c, 0x0d, 0x7d, 0xc7, 0xf6, 0x78, 0x5c, 0xf4, 0xb4, 0x87, 0xa1, 0x39, 0xe0, 0x25, 0x1c,
-	0xd6, 0xd2, 0x80, 0x50, 0x74, 0x14, 0x98, 0xc3, 0x12, 0x4a, 0x6b, 0x5a, 0x98, 0x87, 0xaf, 0xa0,
-	0x57, 0x8f, 0x82, 0x85, 0xde, 0x9a, 0x8f, 0x70, 0x63, 0x2e, 0xf3, 0xf0, 0x0d, 0xf4, 0x9d, 0x74,
-	0x58, 0xdc, 0xed, 0x99, 0x09, 0x1d, 0x23, 0x31, 0x0f, 0x53, 0x18, 0x6d, 0xf3, 0x10, 0x9e, 0xae,
-	0xa5, 0xd8, 0xc5, 0x6a, 0x9b, 0x6c, 0x5d, 0x5f, 0x33, 0x0f, 0x7f, 0xc2, 0xa3, 0xbb, 0x6d, 0x86,
-	0xcf, 0x2a, 0xe1, 0xb7, 0x7a, 0x71, 0xcb, 0xae, 0x73, 0xe8, 0x3b, 0x66, 0xb4, 0xea, 0xb4, 0x5b,
-	0xb4, 0xa9, 0xad, 0x63, 0x50, 0xfb, 0xba, 0xdd, 0xb6, 0x4d, 0x6d, 0xbf, 0xdd, 0x2b, 0xbe, 0xda,
-	0x2f, 0xfe, 0x06, 0x00, 0x00, 0xff, 0xff, 0xa4, 0xe6, 0xcc, 0x0e, 0xcb, 0x05, 0x00, 0x00,
+	// 494 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x54, 0xc1, 0x6e, 0xd3, 0x40,
+	0x10, 0x8d, 0x93, 0x1a, 0x9a, 0x81, 0x26, 0xd2, 0x48, 0x89, 0x2a, 0x57, 0x88, 0x68, 0xa9, 0x20,
+	0xa8, 0x28, 0x87, 0x72, 0x02, 0xb5, 0x02, 0x1a, 0x50, 0x15, 0x54, 0x2e, 0x06, 0xce, 0xd1, 0x92,
+	0x1d, 0xd1, 0x15, 0xb6, 0x77, 0xb1, 0x37, 0x95, 0xf2, 0x41, 0xfc, 0x27, 0x8a, 0xbd, 0x31, 0xf1,
+	0xda, 0x6a, 0xc2, 0x2d, 0xca, 0xcc, 0xce, 0xbc, 0xf7, 0xe6, 0x3d, 0x03, 0xf2, 0xa5, 0x51, 0xf3,
+	0x05, 0x37, 0x3c, 0x52, 0x3f, 0x27, 0x3a, 0x55, 0x46, 0x61, 0x87, 0x6b, 0xc9, 0xce, 0x60, 0x30,
+	0x4d, 0x89, 0x1b, 0x9a, 0xf2, 0xf4, 0x8b, 0x12, 0x14, 0x85, 0xf4, 0x7b, 0x49, 0x99, 0x41, 0x84,
+	0x83, 0x84, 0xc7, 0x74, 0xec, 0x8d, 0xbc, 0x71, 0x37, 0xcc, 0x7f, 0xb3, 0x09, 0x1c, 0x6e, 0xda,
+	0xb0, 0x07, 0x6d, 0x29, 0xf2, 0xaa, 0x1f, 0xb6, 0xa5, 0x28, 0xfb, 0xdb, 0x5b, 0xfd, 0x63, 0x18,
+	0x5e, 0x93, 0xd9, 0x3c, 0xb9, 0x5a, 0xcd, 0xc4, 0x66, 0xba, 0xf3, 0x9a, 0x5d, 0xc0, 0xe0, 0x46,
+	0x66, 0x65, 0x6b, 0x16, 0x52, 0xa6, 0x55, 0x92, 0x11, 0x3e, 0x03, 0x5f, 0x1a, 0x8a, 0xb3, 0x63,
+	0x6f, 0xd4, 0x19, 0x3f, 0x3a, 0x3f, 0x9a, 0x70, 0x2d, 0x27, 0x25, 0xd6, 0xa2, 0xc6, 0x5e, 0xc0,
+	0xe0, 0x23, 0x45, 0x54, 0x27, 0xe1, 0xae, 0xf9, 0x05, 0x43, 0xcb, 0x56, 0xc5, 0x5a, 0x25, 0x94,
+	0x98, 0x7b, 0xe8, 0xe2, 0x08, 0x1e, 0x2f, 0x78, 0x3a, 0x8f, 0xd7, 0x13, 0xe7, 0x52, 0xe4, 0xd4,
+	0xfc, 0x10, 0x16, 0x76, 0xc9, 0x4c, 0xe0, 0x09, 0x74, 0x35, 0x4f, 0x29, 0x31, 0xeb, 0xf2, 0x41,
+	0x5e, 0x3e, 0x2c, 0xfe, 0x98, 0x09, 0x96, 0x40, 0xb7, 0x5c, 0xb3, 0x8f, 0x5c, 0xb5, 0x7d, 0x9d,
+	0xff, 0xdb, 0x77, 0x69, 0x35, 0xfc, 0x47, 0xcd, 0x6a, 0x78, 0x5a, 0xd5, 0xb0, 0x57, 0x68, 0x58,
+	0xb6, 0x59, 0x11, 0x3f, 0xc3, 0xf3, 0x6b, 0x32, 0xdf, 0x94, 0xbe, 0xa1, 0x3b, 0x8a, 0xca, 0x72,
+	0x76, 0xb5, 0x72, 0x55, 0x75, 0x71, 0x7a, 0x2e, 0x4e, 0x36, 0x85, 0xd3, 0xf5, 0xe1, 0x6f, 0x65,
+	0x24, 0x2a, 0x83, 0x5c, 0xd5, 0x2b, 0x7c, 0x3c, 0x87, 0xcf, 0x18, 0x86, 0xf6, 0xaa, 0xee, 0x33,
+	0xf7, 0xac, 0xaf, 0x60, 0xf8, 0x5d, 0x8b, 0x3d, 0xcf, 0xca, 0x1e, 0x82, 0xff, 0x29, 0xd6, 0x66,
+	0x75, 0xfe, 0xc7, 0x07, 0xfc, 0xb0, 0x34, 0x6a, 0x5a, 0xc4, 0xe2, 0x2b, 0xa5, 0x77, 0x72, 0x41,
+	0x78, 0x09, 0xbd, 0x6a, 0x24, 0x30, 0x28, 0x14, 0x6b, 0xca, 0x49, 0x50, 0x75, 0x24, 0x6b, 0xe1,
+	0x3b, 0xe8, 0x3b, 0xa6, 0xc7, 0x93, 0xbc, 0xa7, 0x39, 0x0a, 0xf5, 0x01, 0x6f, 0xe0, 0xa8, 0x92,
+	0x05, 0x84, 0xbc, 0x23, 0xc7, 0x1c, 0x14, 0x50, 0x1a, 0xb3, 0xc2, 0x5a, 0xf8, 0x16, 0x7a, 0xd5,
+	0x20, 0x58, 0xe8, 0x8d, 0xe9, 0x08, 0xb6, 0xe6, 0xb2, 0x16, 0xbe, 0x87, 0xbe, 0x93, 0x0d, 0x8b,
+	0xbb, 0x39, 0x31, 0x81, 0x63, 0x23, 0xd6, 0xc2, 0x08, 0x9e, 0xee, 0x70, 0x10, 0x9e, 0x6d, 0x94,
+	0xd8, 0xc3, 0x67, 0xdb, 0x5c, 0x5d, 0x4f, 0xb3, 0x16, 0xde, 0xc2, 0x93, 0x7b, 0x3d, 0x86, 0x2f,
+	0x4b, 0xd5, 0x77, 0xf9, 0x70, 0xc7, 0xa6, 0x0b, 0xe8, 0x3b, 0x46, 0xb4, 0xca, 0x34, 0xdb, 0xb3,
+	0xae, 0xab, 0x63, 0x4e, 0xfb, 0xba, 0xd9, 0xb2, 0x75, 0x5d, 0x7f, 0x3c, 0xc8, 0xbf, 0xd7, 0xaf,
+	0xff, 0x06, 0x00, 0x00, 0xff, 0xff, 0xe2, 0xd7, 0xb7, 0x11, 0xc5, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -643,8 +643,8 @@ type AutoCatalogServiceClient interface {
 	ListCarModels(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*ListCarModelsResponse, error)
 	DeleteCarModel(ctx context.Context, in *DeleteCarModelRequest, opts ...grpc.CallOption) (*Empty, error)
 	CreateComponent(ctx context.Context, in *CreateComponentRequest, opts ...grpc.CallOption) (*Component, error)
-	GetTopLevelComponentsForCarModel(ctx context.Context, in *GetTopLevelComponentsForCarModelRequest, opts ...grpc.CallOption) (*ListComponentResponse, error)
-	GetChildComponentsForComponent(ctx context.Context, in *GetChildComponentsForComponentRequest, opts ...grpc.CallOption) (*ListComponentResponse, error)
+	GetTopLevelComponentsByCarModel(ctx context.Context, in *GetTopLevelComponentsByCarModelRequest, opts ...grpc.CallOption) (*ListComponentResponse, error)
+	GetChildComponentsByComponent(ctx context.Context, in *GetChildComponentsByComponentRequest, opts ...grpc.CallOption) (*ListComponentResponse, error)
 	DeleteComponent(ctx context.Context, in *DeleteComponentRequest, opts ...grpc.CallOption) (*Empty, error)
 	UpdateComponent(ctx context.Context, in *UpdateComponentRequest, opts ...grpc.CallOption) (*Component, error)
 }
@@ -702,18 +702,18 @@ func (c *autoCatalogServiceClient) CreateComponent(ctx context.Context, in *Crea
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) GetTopLevelComponentsForCarModel(ctx context.Context, in *GetTopLevelComponentsForCarModelRequest, opts ...grpc.CallOption) (*ListComponentResponse, error) {
+func (c *autoCatalogServiceClient) GetTopLevelComponentsByCarModel(ctx context.Context, in *GetTopLevelComponentsByCarModelRequest, opts ...grpc.CallOption) (*ListComponentResponse, error) {
 	out := new(ListComponentResponse)
-	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/GetTopLevelComponentsForCarModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/GetTopLevelComponentsByCarModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) GetChildComponentsForComponent(ctx context.Context, in *GetChildComponentsForComponentRequest, opts ...grpc.CallOption) (*ListComponentResponse, error) {
+func (c *autoCatalogServiceClient) GetChildComponentsByComponent(ctx context.Context, in *GetChildComponentsByComponentRequest, opts ...grpc.CallOption) (*ListComponentResponse, error) {
 	out := new(ListComponentResponse)
-	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/GetChildComponentsForComponent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/GetChildComponentsByComponent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -745,8 +745,8 @@ type AutoCatalogServiceServer interface {
 	ListCarModels(context.Context, *Empty) (*ListCarModelsResponse, error)
 	DeleteCarModel(context.Context, *DeleteCarModelRequest) (*Empty, error)
 	CreateComponent(context.Context, *CreateComponentRequest) (*Component, error)
-	GetTopLevelComponentsForCarModel(context.Context, *GetTopLevelComponentsForCarModelRequest) (*ListComponentResponse, error)
-	GetChildComponentsForComponent(context.Context, *GetChildComponentsForComponentRequest) (*ListComponentResponse, error)
+	GetTopLevelComponentsByCarModel(context.Context, *GetTopLevelComponentsByCarModelRequest) (*ListComponentResponse, error)
+	GetChildComponentsByComponent(context.Context, *GetChildComponentsByComponentRequest) (*ListComponentResponse, error)
 	DeleteComponent(context.Context, *DeleteComponentRequest) (*Empty, error)
 	UpdateComponent(context.Context, *UpdateComponentRequest) (*Component, error)
 }
@@ -770,11 +770,11 @@ func (*UnimplementedAutoCatalogServiceServer) DeleteCarModel(ctx context.Context
 func (*UnimplementedAutoCatalogServiceServer) CreateComponent(ctx context.Context, req *CreateComponentRequest) (*Component, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateComponent not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) GetTopLevelComponentsForCarModel(ctx context.Context, req *GetTopLevelComponentsForCarModelRequest) (*ListComponentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTopLevelComponentsForCarModel not implemented")
+func (*UnimplementedAutoCatalogServiceServer) GetTopLevelComponentsByCarModel(ctx context.Context, req *GetTopLevelComponentsByCarModelRequest) (*ListComponentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTopLevelComponentsByCarModel not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) GetChildComponentsForComponent(ctx context.Context, req *GetChildComponentsForComponentRequest) (*ListComponentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetChildComponentsForComponent not implemented")
+func (*UnimplementedAutoCatalogServiceServer) GetChildComponentsByComponent(ctx context.Context, req *GetChildComponentsByComponentRequest) (*ListComponentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetChildComponentsByComponent not implemented")
 }
 func (*UnimplementedAutoCatalogServiceServer) DeleteComponent(ctx context.Context, req *DeleteComponentRequest) (*Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteComponent not implemented")
@@ -877,38 +877,38 @@ func _AutoCatalogService_CreateComponent_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AutoCatalogService_GetTopLevelComponentsForCarModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTopLevelComponentsForCarModelRequest)
+func _AutoCatalogService_GetTopLevelComponentsByCarModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTopLevelComponentsByCarModelRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AutoCatalogServiceServer).GetTopLevelComponentsForCarModel(ctx, in)
+		return srv.(AutoCatalogServiceServer).GetTopLevelComponentsByCarModel(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AutoCatalogService/GetTopLevelComponentsForCarModel",
+		FullMethod: "/api.AutoCatalogService/GetTopLevelComponentsByCarModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AutoCatalogServiceServer).GetTopLevelComponentsForCarModel(ctx, req.(*GetTopLevelComponentsForCarModelRequest))
+		return srv.(AutoCatalogServiceServer).GetTopLevelComponentsByCarModel(ctx, req.(*GetTopLevelComponentsByCarModelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AutoCatalogService_GetChildComponentsForComponent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetChildComponentsForComponentRequest)
+func _AutoCatalogService_GetChildComponentsByComponent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChildComponentsByComponentRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AutoCatalogServiceServer).GetChildComponentsForComponent(ctx, in)
+		return srv.(AutoCatalogServiceServer).GetChildComponentsByComponent(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AutoCatalogService/GetChildComponentsForComponent",
+		FullMethod: "/api.AutoCatalogService/GetChildComponentsByComponent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AutoCatalogServiceServer).GetChildComponentsForComponent(ctx, req.(*GetChildComponentsForComponentRequest))
+		return srv.(AutoCatalogServiceServer).GetChildComponentsByComponent(ctx, req.(*GetChildComponentsByComponentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -974,12 +974,12 @@ var _AutoCatalogService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _AutoCatalogService_CreateComponent_Handler,
 		},
 		{
-			MethodName: "GetTopLevelComponentsForCarModel",
-			Handler:    _AutoCatalogService_GetTopLevelComponentsForCarModel_Handler,
+			MethodName: "GetTopLevelComponentsByCarModel",
+			Handler:    _AutoCatalogService_GetTopLevelComponentsByCarModel_Handler,
 		},
 		{
-			MethodName: "GetChildComponentsForComponent",
-			Handler:    _AutoCatalogService_GetChildComponentsForComponent_Handler,
+			MethodName: "GetChildComponentsByComponent",
+			Handler:    _AutoCatalogService_GetChildComponentsByComponent_Handler,
 		},
 		{
 			MethodName: "DeleteComponent",

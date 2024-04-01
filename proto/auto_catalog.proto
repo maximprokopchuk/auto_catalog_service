@@ -40,11 +40,11 @@ message ListComponentResponse {
     repeated Component items = 1;
 }
 
-message GetTopLevelComponentsForCarModelRequest {
+message GetTopLevelComponentsByCarModelRequest {
     int32 car_model_id = 1;
 }
 
-message GetChildComponentsForComponentRequest {
+message GetChildComponentsByComponentRequest {
     int32 parent_id = 1;
 }
 
@@ -65,8 +65,8 @@ service AutoCatalogService {
     rpc ListCarModels(Empty) returns (ListCarModelsResponse) {}
     rpc DeleteCarModel(DeleteCarModelRequest) returns (Empty){}
     rpc CreateComponent(CreateComponentRequest) returns (Component){}
-    rpc GetTopLevelComponentsForCarModel(GetTopLevelComponentsForCarModelRequest) returns (ListComponentResponse){}
-    rpc GetChildComponentsForComponent(GetChildComponentsForComponentRequest) returns (ListComponentResponse){}
+    rpc GetTopLevelComponentsByCarModel(GetTopLevelComponentsByCarModelRequest) returns (ListComponentResponse){}
+    rpc GetChildComponentsByComponent(GetChildComponentsByComponentRequest) returns (ListComponentResponse){}
     rpc DeleteComponent(DeleteComponentRequest) returns (Empty){}
     rpc UpdateComponent(UpdateComponentRequest) returns(Component){}
 }

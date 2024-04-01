@@ -26,12 +26,12 @@ INSERT INTO components (
 )
 RETURNING *;
 
--- name: GetTopLevelComponentsForCarModel :many
+-- name: GetTopLevelComponentsByCarModel :many
 SELECT * FROM components
 WHERE car_model_id = $1 LIMIT 1;
 
 
--- name: GetChildComponentsForComponent :many
+-- name: GetChildComponentsByComponent :many
 SELECT * FROM components
 WHERE parent_id = $1 LIMIT 1;
 

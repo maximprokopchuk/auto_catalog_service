@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/maximprokopchuk/auto_catalog_service/internal/api"
 	"github.com/maximprokopchuk/auto_catalog_service/internal/sqlc"
 	"github.com/maximprokopchuk/auto_catalog_service/internal/store"
+	"github.com/maximprokopchuk/auto_catalog_service/pkg/api"
 )
 
 type GRPCServer struct {
@@ -71,9 +71,9 @@ func (server *GRPCServer) DeleteCarModel(ctx context.Context, req *api.DeleteCar
 	return &api.Empty{}, nil
 }
 
-func (server *GRPCServer) GetTopLevelComponentsForCarModel(ctx context.Context, req *api.GetTopLevelComponentsForCarModelRequest) (*api.ListComponentResponse, error) {
+func (server *GRPCServer) GetTopLevelComponentsByCarModel(ctx context.Context, req *api.GetTopLevelComponentsByCarModelRequest) (*api.ListComponentResponse, error) {
 
-	rec, err := server.Store.Queries.GetTopLevelComponentsForCarModel(ctx, pgtype.Int4{Int32: req.CarModelId, Valid: true})
+	rec, err := server.Store.Queries.GetTopLevelComponentsByCarModel(ctx, pgtype.Int4{Int32: req.CarModelId, Valid: true})
 	if err != nil {
 		return nil, err
 	}
@@ -116,9 +116,9 @@ func (server *GRPCServer) CreateComponent(ctx context.Context, req *api.CreateCo
 	}, nil
 }
 
-func (server *GRPCServer) GetChildComponentsForComponent(ctx context.Context, req *api.GetChildComponentsForComponentRequest) (*api.ListComponentResponse, error) {
+func (server *GRPCServer) GetChildComponentsByComponent(ctx context.Context, req *api.GetChildComponentsByComponentRequest) (*api.ListComponentResponse, error) {
 
-	rec, err := server.Store.Queries.GetChildComponentsForComponent(ctx, pgtype.Int4{Int32: req.ParentId, Valid: true})
+	rec, err := server.Store.Queries.GetChildComponentsByComponent(ctx, pgtype.Int4{Int32: req.ParentId, Valid: true})
 	if err != nil {
 		return nil, err
 	}
