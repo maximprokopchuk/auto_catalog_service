@@ -28,7 +28,7 @@ func (q *Queries) CreateCarModel(ctx context.Context, name string) (CarModel, er
 }
 
 const createComponent = `-- name: CreateComponent :one
-INSERT INTO components (
+INSERT INTO component (
   name, car_model_id, parent_id
 ) VALUES (
   $1, $2, $3
@@ -65,7 +65,7 @@ func (q *Queries) DeleteCarModel(ctx context.Context, id int64) error {
 }
 
 const deleteComponent = `-- name: DeleteComponent :exec
-DELETE FROM components
+DELETE FROM component
 WHERE id = $1
 `
 
@@ -87,7 +87,7 @@ func (q *Queries) GetCarModel(ctx context.Context, id int64) (CarModel, error) {
 }
 
 const getChildComponentsByComponent = `-- name: GetChildComponentsByComponent :many
-SELECT id, name, car_model_id, parent_id FROM components
+SELECT id, name, car_model_id, parent_id FROM component
 WHERE parent_id = $1 LIMIT 1
 `
 
@@ -117,7 +117,7 @@ func (q *Queries) GetChildComponentsByComponent(ctx context.Context, parentID pg
 }
 
 const getTopLevelComponentsByCarModel = `-- name: GetTopLevelComponentsByCarModel :many
-SELECT id, name, car_model_id, parent_id FROM components
+SELECT id, name, car_model_id, parent_id FROM component
 WHERE car_model_id = $1 LIMIT 1
 `
 
@@ -172,7 +172,7 @@ func (q *Queries) ListCarModels(ctx context.Context) ([]CarModel, error) {
 }
 
 const updateComponent = `-- name: UpdateComponent :one
-UPDATE components
+UPDATE component
 SET name = $1
 RETURNING id, name, car_model_id, parent_id
 `

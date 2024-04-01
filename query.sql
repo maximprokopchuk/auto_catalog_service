@@ -19,7 +19,7 @@ DELETE FROM car_model
 WHERE id = $1;
 
 -- name: CreateComponent :one
-INSERT INTO components (
+INSERT INTO component (
   name, car_model_id, parent_id
 ) VALUES (
   $1, $2, $3
@@ -27,19 +27,19 @@ INSERT INTO components (
 RETURNING *;
 
 -- name: GetTopLevelComponentsByCarModel :many
-SELECT * FROM components
+SELECT * FROM component
 WHERE car_model_id = $1 LIMIT 1;
 
 
 -- name: GetChildComponentsByComponent :many
-SELECT * FROM components
+SELECT * FROM component
 WHERE parent_id = $1 LIMIT 1;
 
 -- name: DeleteComponent :exec
-DELETE FROM components
+DELETE FROM component
 WHERE id = $1;
 
 -- name: UpdateComponent :one
-UPDATE components
+UPDATE component
 SET name = $1
 RETURNING *;
