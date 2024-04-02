@@ -6,7 +6,7 @@ import (
 
 	"github.com/jackc/pgx/v5"
 	_ "github.com/lib/pq"
-	"github.com/maximprokopchuk/auto_catalog_service/internal/sqlc"
+	"github.com/maximprokopchuk/auto_reference_catalog_service/internal/sqlc"
 )
 
 type Store struct {

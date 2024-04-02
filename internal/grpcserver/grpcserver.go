@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/maximprokopchuk/auto_catalog_service/internal/sqlc"
-	"github.com/maximprokopchuk/auto_catalog_service/internal/store"
-	"github.com/maximprokopchuk/auto_catalog_service/pkg/api"
+	"github.com/maximprokopchuk/auto_reference_catalog_service/internal/sqlc"
+	"github.com/maximprokopchuk/auto_reference_catalog_service/internal/store"
+	"github.com/maximprokopchuk/auto_reference_catalog_service/pkg/api"
 )
 
 type GRPCServer struct {

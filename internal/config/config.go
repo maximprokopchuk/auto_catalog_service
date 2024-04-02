@@ -1,6 +1,6 @@
 package config
 
-import "github.com/maximprokopchuk/auto_catalog_service/internal/store"
+import "github.com/maximprokopchuk/auto_reference_catalog_service/internal/store"
 
 type Config struct {
 	BindUrl string `toml:"bind_url"`

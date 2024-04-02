@@ -1,4 +1,4 @@
-module github.com/maximprokopchuk/auto_catalog_service
+module github.com/maximprokopchuk/auto_reference_catalog_service
 
 go 1.22.1
 
