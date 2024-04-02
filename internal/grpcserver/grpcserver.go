@@ -17,33 +17,37 @@ func New(st *store.Store) *GRPCServer {
 	return &GRPCServer{Store: st}
 }
 
-func (server *GRPCServer) CreateCarModel(ctx context.Context, req *api.CreateCarModelRequest) (*api.CarModel, error) {
+func (server *GRPCServer) CreateCarModel(ctx context.Context, req *api.CreateCarModelRequest) (*api.CreateCarModelResponse, error) {
 	rec, err := server.Store.Queries.CreateCarModel(ctx, req.Name)
 
 	if err != nil {
 		return nil, err
 	}
 
-	return &api.CarModel{
-		Id:   int32(rec.ID),
-		Name: rec.Name,
+	return &api.CreateCarModelResponse{
+		Result: &api.CarModel{
+			Id:   int32(rec.ID),
+			Name: rec.Name,
+		},
 	}, nil
 }
 
-func (server *GRPCServer) GetCarModelById(ctx context.Context, req *api.GetCarModelByIdRequest) (*api.CarModel, error) {
+func (server *GRPCServer) GetCarModelById(ctx context.Context, req *api.GetCarModelByIdRequest) (*api.GetCarModelResponse, error) {
 	rec, err := server.Store.Queries.GetCarModel(ctx, int64(req.Id))
 
 	if err != nil {
 		return nil, err
 	}
 
-	return &api.CarModel{
-		Id:   int32(rec.ID),
-		Name: rec.Name,
+	return &api.GetCarModelResponse{
+		Result: &api.CarModel{
+			Id:   int32(rec.ID),
+			Name: rec.Name,
+		},
 	}, nil
 }
 
-func (server *GRPCServer) ListCarModels(ctx context.Context, req *api.Empty) (*api.ListCarModelsResponse, error) {
+func (server *GRPCServer) ListCarModels(ctx context.Context, req *api.ListCarModelsRequst) (*api.ListCarModelsResponse, error) {
 	rec, err := server.Store.Queries.ListCarModels(ctx)
 
 	if err != nil {
@@ -59,16 +63,16 @@ func (server *GRPCServer) ListCarModels(ctx context.Context, req *api.Empty) (*a
 		})
 	}
 
-	return &api.ListCarModelsResponse{Items: result}, nil
+	return &api.ListCarModelsResponse{Result: result}, nil
 }
 
-func (server *GRPCServer) DeleteCarModel(ctx context.Context, req *api.DeleteCarModelRequest) (*api.Empty, error) {
+func (server *GRPCServer) DeleteCarModel(ctx context.Context, req *api.DeleteCarModelRequest) (*api.DeleteCarModelResponse, error) {
 	err := server.Store.Queries.DeleteCarModel(ctx, int64(req.Id))
 	if err != nil {
 		return nil, err
 	}
 
-	return &api.Empty{}, nil
+	return &api.DeleteCarModelResponse{}, nil
 }
 
 func (server *GRPCServer) GetTopLevelComponentsByCarModel(ctx context.Context, req *api.GetTopLevelComponentsByCarModelRequest) (*api.ListComponentResponse, error) {
@@ -89,10 +93,10 @@ func (server *GRPCServer) GetTopLevelComponentsByCarModel(ctx context.Context, r
 		})
 	}
 
-	return &api.ListComponentResponse{Items: result}, nil
+	return &api.ListComponentResponse{Result: result}, nil
 }
 
-func (server *GRPCServer) CreateComponent(ctx context.Context, req *api.CreateComponentRequest) (*api.Component, error) {
+func (server *GRPCServer) CreateComponent(ctx context.Context, req *api.CreateComponentRequest) (*api.CreateComponentResponse, error) {
 	params := sqlc.CreateComponentParams{
 		Name: req.Name,
 	}
@@ -108,11 +112,13 @@ func (server *GRPCServer) CreateComponent(ctx context.Context, req *api.CreateCo
 		return nil, err
 	}
 
-	return &api.Component{
-		Id:         int32(rec.ID),
-		Name:       rec.Name,
-		ParentId:   rec.ParentID.Int32,
-		CarModelId: rec.CarModelID.Int32,
+	return &api.CreateComponentResponse{
+		Result: &api.Component{
+			Id:         int32(rec.ID),
+			Name:       rec.Name,
+			ParentId:   rec.ParentID.Int32,
+			CarModelId: rec.CarModelID.Int32,
+		},
 	}, nil
 }
 
@@ -134,28 +140,30 @@ func (server *GRPCServer) GetChildComponentsByComponent(ctx context.Context, req
 		})
 	}
 
-	return &api.ListComponentResponse{Items: result}, nil
+	return &api.ListComponentResponse{Result: result}, nil
 }
 
-func (server *GRPCServer) DeleteComponent(ctx context.Context, req *api.DeleteComponentRequest) (*api.Empty, error) {
+func (server *GRPCServer) DeleteComponent(ctx context.Context, req *api.DeleteComponentRequest) (*api.DeleteComponentResponse, error) {
 	err := server.Store.Queries.DeleteComponent(ctx, int64(req.Id))
 	if err != nil {
 		return nil, err
 	}
 
-	return &api.Empty{}, nil
+	return &api.DeleteComponentResponse{}, nil
 }
 
-func (server *GRPCServer) UpdateComponent(ctx context.Context, req *api.UpdateComponentRequest) (*api.Component, error) {
+func (server *GRPCServer) UpdateComponent(ctx context.Context, req *api.UpdateComponentRequest) (*api.UpdateComponentResponse, error) {
 	rec, err := server.Store.Queries.UpdateComponent(ctx, req.Name)
 	if err != nil {
 		return nil, err
 	}
 
-	return &api.Component{
-		Id:         int32(rec.ID),
-		ParentId:   rec.ParentID.Int32,
-		CarModelId: rec.CarModelID.Int32,
-		Name:       rec.Name,
+	return &api.UpdateComponentResponse{
+		Result: &api.Component{
+			Id:         int32(rec.ID),
+			ParentId:   rec.ParentID.Int32,
+			CarModelId: rec.CarModelID.Int32,
+			Name:       rec.Name,
+		},
 	}, nil
 }

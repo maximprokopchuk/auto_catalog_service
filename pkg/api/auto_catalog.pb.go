@@ -24,45 +24,6 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type CreateCarModelRequest struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *CreateCarModelRequest) Reset()         { *m = CreateCarModelRequest{} }
-func (m *CreateCarModelRequest) String() string { return proto.CompactTextString(m) }
-func (*CreateCarModelRequest) ProtoMessage()    {}
-func (*CreateCarModelRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{0}
-}
-
-func (m *CreateCarModelRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CreateCarModelRequest.Unmarshal(m, b)
-}
-func (m *CreateCarModelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CreateCarModelRequest.Marshal(b, m, deterministic)
-}
-func (m *CreateCarModelRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateCarModelRequest.Merge(m, src)
-}
-func (m *CreateCarModelRequest) XXX_Size() int {
-	return xxx_messageInfo_CreateCarModelRequest.Size(m)
-}
-func (m *CreateCarModelRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateCarModelRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CreateCarModelRequest proto.InternalMessageInfo
-
-func (m *CreateCarModelRequest) GetName() string {
-	if m != nil {
-		return m.Name
-	}
-	return ""
-}
-
 type CarModel struct {
 	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -75,7 +36,7 @@ func (m *CarModel) Reset()         { *m = CarModel{} }
 func (m *CarModel) String() string { return proto.CompactTextString(m) }
 func (*CarModel) ProtoMessage()    {}
 func (*CarModel) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{1}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{0}
 }
 
 func (m *CarModel) XXX_Unmarshal(b []byte) error {
@@ -110,178 +71,6 @@ func (m *CarModel) GetName() string {
 	return ""
 }
 
-type GetCarModelByIdRequest struct {
-	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *GetCarModelByIdRequest) Reset()         { *m = GetCarModelByIdRequest{} }
-func (m *GetCarModelByIdRequest) String() string { return proto.CompactTextString(m) }
-func (*GetCarModelByIdRequest) ProtoMessage()    {}
-func (*GetCarModelByIdRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{2}
-}
-
-func (m *GetCarModelByIdRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetCarModelByIdRequest.Unmarshal(m, b)
-}
-func (m *GetCarModelByIdRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetCarModelByIdRequest.Marshal(b, m, deterministic)
-}
-func (m *GetCarModelByIdRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetCarModelByIdRequest.Merge(m, src)
-}
-func (m *GetCarModelByIdRequest) XXX_Size() int {
-	return xxx_messageInfo_GetCarModelByIdRequest.Size(m)
-}
-func (m *GetCarModelByIdRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetCarModelByIdRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GetCarModelByIdRequest proto.InternalMessageInfo
-
-func (m *GetCarModelByIdRequest) GetId() int32 {
-	if m != nil {
-		return m.Id
-	}
-	return 0
-}
-
-type ListCarModelsResponse struct {
-	Items                []*CarModel `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
-}
-
-func (m *ListCarModelsResponse) Reset()         { *m = ListCarModelsResponse{} }
-func (m *ListCarModelsResponse) String() string { return proto.CompactTextString(m) }
-func (*ListCarModelsResponse) ProtoMessage()    {}
-func (*ListCarModelsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{3}
-}
-
-func (m *ListCarModelsResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ListCarModelsResponse.Unmarshal(m, b)
-}
-func (m *ListCarModelsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ListCarModelsResponse.Marshal(b, m, deterministic)
-}
-func (m *ListCarModelsResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListCarModelsResponse.Merge(m, src)
-}
-func (m *ListCarModelsResponse) XXX_Size() int {
-	return xxx_messageInfo_ListCarModelsResponse.Size(m)
-}
-func (m *ListCarModelsResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListCarModelsResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_ListCarModelsResponse proto.InternalMessageInfo
-
-func (m *ListCarModelsResponse) GetItems() []*CarModel {
-	if m != nil {
-		return m.Items
-	}
-	return nil
-}
-
-type DeleteCarModelRequest struct {
-	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *DeleteCarModelRequest) Reset()         { *m = DeleteCarModelRequest{} }
-func (m *DeleteCarModelRequest) String() string { return proto.CompactTextString(m) }
-func (*DeleteCarModelRequest) ProtoMessage()    {}
-func (*DeleteCarModelRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{4}
-}
-
-func (m *DeleteCarModelRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DeleteCarModelRequest.Unmarshal(m, b)
-}
-func (m *DeleteCarModelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DeleteCarModelRequest.Marshal(b, m, deterministic)
-}
-func (m *DeleteCarModelRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DeleteCarModelRequest.Merge(m, src)
-}
-func (m *DeleteCarModelRequest) XXX_Size() int {
-	return xxx_messageInfo_DeleteCarModelRequest.Size(m)
-}
-func (m *DeleteCarModelRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_DeleteCarModelRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DeleteCarModelRequest proto.InternalMessageInfo
-
-func (m *DeleteCarModelRequest) GetId() int32 {
-	if m != nil {
-		return m.Id
-	}
-	return 0
-}
-
-type CreateComponentRequest struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	CarModelId           int32    `protobuf:"varint,2,opt,name=car_model_id,json=carModelId,proto3" json:"car_model_id,omitempty"`
-	ParentId             int32    `protobuf:"varint,4,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *CreateComponentRequest) Reset()         { *m = CreateComponentRequest{} }
-func (m *CreateComponentRequest) String() string { return proto.CompactTextString(m) }
-func (*CreateComponentRequest) ProtoMessage()    {}
-func (*CreateComponentRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{5}
-}
-
-func (m *CreateComponentRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CreateComponentRequest.Unmarshal(m, b)
-}
-func (m *CreateComponentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CreateComponentRequest.Marshal(b, m, deterministic)
-}
-func (m *CreateComponentRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateComponentRequest.Merge(m, src)
-}
-func (m *CreateComponentRequest) XXX_Size() int {
-	return xxx_messageInfo_CreateComponentRequest.Size(m)
-}
-func (m *CreateComponentRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateComponentRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CreateComponentRequest proto.InternalMessageInfo
-
-func (m *CreateComponentRequest) GetName() string {
-	if m != nil {
-		return m.Name
-	}
-	return ""
-}
-
-func (m *CreateComponentRequest) GetCarModelId() int32 {
-	if m != nil {
-		return m.CarModelId
-	}
-	return 0
-}
-
-func (m *CreateComponentRequest) GetParentId() int32 {
-	if m != nil {
-		return m.ParentId
-	}
-	return 0
-}
-
 type Component struct {
 	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -296,7 +85,7 @@ func (m *Component) Reset()         { *m = Component{} }
 func (m *Component) String() string { return proto.CompactTextString(m) }
 func (*Component) ProtoMessage()    {}
 func (*Component) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{6}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{1}
 }
 
 func (m *Component) XXX_Unmarshal(b []byte) error {
@@ -345,8 +134,398 @@ func (m *Component) GetParentId() int32 {
 	return 0
 }
 
+type CreateCarModelRequest struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateCarModelRequest) Reset()         { *m = CreateCarModelRequest{} }
+func (m *CreateCarModelRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateCarModelRequest) ProtoMessage()    {}
+func (*CreateCarModelRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{2}
+}
+
+func (m *CreateCarModelRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateCarModelRequest.Unmarshal(m, b)
+}
+func (m *CreateCarModelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateCarModelRequest.Marshal(b, m, deterministic)
+}
+func (m *CreateCarModelRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateCarModelRequest.Merge(m, src)
+}
+func (m *CreateCarModelRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateCarModelRequest.Size(m)
+}
+func (m *CreateCarModelRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateCarModelRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateCarModelRequest proto.InternalMessageInfo
+
+func (m *CreateCarModelRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type CreateCarModelResponse struct {
+	Result               *CarModel `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *CreateCarModelResponse) Reset()         { *m = CreateCarModelResponse{} }
+func (m *CreateCarModelResponse) String() string { return proto.CompactTextString(m) }
+func (*CreateCarModelResponse) ProtoMessage()    {}
+func (*CreateCarModelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{3}
+}
+
+func (m *CreateCarModelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateCarModelResponse.Unmarshal(m, b)
+}
+func (m *CreateCarModelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateCarModelResponse.Marshal(b, m, deterministic)
+}
+func (m *CreateCarModelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateCarModelResponse.Merge(m, src)
+}
+func (m *CreateCarModelResponse) XXX_Size() int {
+	return xxx_messageInfo_CreateCarModelResponse.Size(m)
+}
+func (m *CreateCarModelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateCarModelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateCarModelResponse proto.InternalMessageInfo
+
+func (m *CreateCarModelResponse) GetResult() *CarModel {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
+type GetCarModelByIdRequest struct {
+	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCarModelByIdRequest) Reset()         { *m = GetCarModelByIdRequest{} }
+func (m *GetCarModelByIdRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCarModelByIdRequest) ProtoMessage()    {}
+func (*GetCarModelByIdRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{4}
+}
+
+func (m *GetCarModelByIdRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCarModelByIdRequest.Unmarshal(m, b)
+}
+func (m *GetCarModelByIdRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCarModelByIdRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCarModelByIdRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCarModelByIdRequest.Merge(m, src)
+}
+func (m *GetCarModelByIdRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCarModelByIdRequest.Size(m)
+}
+func (m *GetCarModelByIdRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCarModelByIdRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCarModelByIdRequest proto.InternalMessageInfo
+
+func (m *GetCarModelByIdRequest) GetId() int32 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type GetCarModelResponse struct {
+	Result               *CarModel `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *GetCarModelResponse) Reset()         { *m = GetCarModelResponse{} }
+func (m *GetCarModelResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCarModelResponse) ProtoMessage()    {}
+func (*GetCarModelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{5}
+}
+
+func (m *GetCarModelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCarModelResponse.Unmarshal(m, b)
+}
+func (m *GetCarModelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCarModelResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCarModelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCarModelResponse.Merge(m, src)
+}
+func (m *GetCarModelResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCarModelResponse.Size(m)
+}
+func (m *GetCarModelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCarModelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCarModelResponse proto.InternalMessageInfo
+
+func (m *GetCarModelResponse) GetResult() *CarModel {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
+type ListCarModelsRequst struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ListCarModelsRequst) Reset()         { *m = ListCarModelsRequst{} }
+func (m *ListCarModelsRequst) String() string { return proto.CompactTextString(m) }
+func (*ListCarModelsRequst) ProtoMessage()    {}
+func (*ListCarModelsRequst) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{6}
+}
+
+func (m *ListCarModelsRequst) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarModelsRequst.Unmarshal(m, b)
+}
+func (m *ListCarModelsRequst) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarModelsRequst.Marshal(b, m, deterministic)
+}
+func (m *ListCarModelsRequst) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarModelsRequst.Merge(m, src)
+}
+func (m *ListCarModelsRequst) XXX_Size() int {
+	return xxx_messageInfo_ListCarModelsRequst.Size(m)
+}
+func (m *ListCarModelsRequst) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarModelsRequst.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarModelsRequst proto.InternalMessageInfo
+
+type ListCarModelsResponse struct {
+	Result               []*CarModel `protobuf:"bytes,1,rep,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *ListCarModelsResponse) Reset()         { *m = ListCarModelsResponse{} }
+func (m *ListCarModelsResponse) String() string { return proto.CompactTextString(m) }
+func (*ListCarModelsResponse) ProtoMessage()    {}
+func (*ListCarModelsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{7}
+}
+
+func (m *ListCarModelsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListCarModelsResponse.Unmarshal(m, b)
+}
+func (m *ListCarModelsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListCarModelsResponse.Marshal(b, m, deterministic)
+}
+func (m *ListCarModelsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListCarModelsResponse.Merge(m, src)
+}
+func (m *ListCarModelsResponse) XXX_Size() int {
+	return xxx_messageInfo_ListCarModelsResponse.Size(m)
+}
+func (m *ListCarModelsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListCarModelsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListCarModelsResponse proto.InternalMessageInfo
+
+func (m *ListCarModelsResponse) GetResult() []*CarModel {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
+type DeleteCarModelRequest struct {
+	Id                   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteCarModelRequest) Reset()         { *m = DeleteCarModelRequest{} }
+func (m *DeleteCarModelRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteCarModelRequest) ProtoMessage()    {}
+func (*DeleteCarModelRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{8}
+}
+
+func (m *DeleteCarModelRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteCarModelRequest.Unmarshal(m, b)
+}
+func (m *DeleteCarModelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteCarModelRequest.Marshal(b, m, deterministic)
+}
+func (m *DeleteCarModelRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteCarModelRequest.Merge(m, src)
+}
+func (m *DeleteCarModelRequest) XXX_Size() int {
+	return xxx_messageInfo_DeleteCarModelRequest.Size(m)
+}
+func (m *DeleteCarModelRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteCarModelRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteCarModelRequest proto.InternalMessageInfo
+
+func (m *DeleteCarModelRequest) GetId() int32 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type DeleteCarModelResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteCarModelResponse) Reset()         { *m = DeleteCarModelResponse{} }
+func (m *DeleteCarModelResponse) String() string { return proto.CompactTextString(m) }
+func (*DeleteCarModelResponse) ProtoMessage()    {}
+func (*DeleteCarModelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{9}
+}
+
+func (m *DeleteCarModelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteCarModelResponse.Unmarshal(m, b)
+}
+func (m *DeleteCarModelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteCarModelResponse.Marshal(b, m, deterministic)
+}
+func (m *DeleteCarModelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteCarModelResponse.Merge(m, src)
+}
+func (m *DeleteCarModelResponse) XXX_Size() int {
+	return xxx_messageInfo_DeleteCarModelResponse.Size(m)
+}
+func (m *DeleteCarModelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteCarModelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteCarModelResponse proto.InternalMessageInfo
+
+type CreateComponentRequest struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	CarModelId           int32    `protobuf:"varint,2,opt,name=car_model_id,json=carModelId,proto3" json:"car_model_id,omitempty"`
+	ParentId             int32    `protobuf:"varint,4,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateComponentRequest) Reset()         { *m = CreateComponentRequest{} }
+func (m *CreateComponentRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateComponentRequest) ProtoMessage()    {}
+func (*CreateComponentRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{10}
+}
+
+func (m *CreateComponentRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateComponentRequest.Unmarshal(m, b)
+}
+func (m *CreateComponentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateComponentRequest.Marshal(b, m, deterministic)
+}
+func (m *CreateComponentRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateComponentRequest.Merge(m, src)
+}
+func (m *CreateComponentRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateComponentRequest.Size(m)
+}
+func (m *CreateComponentRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateComponentRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateComponentRequest proto.InternalMessageInfo
+
+func (m *CreateComponentRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *CreateComponentRequest) GetCarModelId() int32 {
+	if m != nil {
+		return m.CarModelId
+	}
+	return 0
+}
+
+func (m *CreateComponentRequest) GetParentId() int32 {
+	if m != nil {
+		return m.ParentId
+	}
+	return 0
+}
+
+type CreateComponentResponse struct {
+	Result               *Component `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *CreateComponentResponse) Reset()         { *m = CreateComponentResponse{} }
+func (m *CreateComponentResponse) String() string { return proto.CompactTextString(m) }
+func (*CreateComponentResponse) ProtoMessage()    {}
+func (*CreateComponentResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{11}
+}
+
+func (m *CreateComponentResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateComponentResponse.Unmarshal(m, b)
+}
+func (m *CreateComponentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateComponentResponse.Marshal(b, m, deterministic)
+}
+func (m *CreateComponentResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateComponentResponse.Merge(m, src)
+}
+func (m *CreateComponentResponse) XXX_Size() int {
+	return xxx_messageInfo_CreateComponentResponse.Size(m)
+}
+func (m *CreateComponentResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateComponentResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateComponentResponse proto.InternalMessageInfo
+
+func (m *CreateComponentResponse) GetResult() *Component {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
 type ListComponentResponse struct {
-	Items                []*Component `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Result               []*Component `protobuf:"bytes,1,rep,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -356,7 +535,7 @@ func (m *ListComponentResponse) Reset()         { *m = ListComponentResponse{} }
 func (m *ListComponentResponse) String() string { return proto.CompactTextString(m) }
 func (*ListComponentResponse) ProtoMessage()    {}
 func (*ListComponentResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{7}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{12}
 }
 
 func (m *ListComponentResponse) XXX_Unmarshal(b []byte) error {
@@ -377,9 +556,9 @@ func (m *ListComponentResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ListComponentResponse proto.InternalMessageInfo
 
-func (m *ListComponentResponse) GetItems() []*Component {
+func (m *ListComponentResponse) GetResult() []*Component {
 	if m != nil {
-		return m.Items
+		return m.Result
 	}
 	return nil
 }
@@ -397,7 +576,7 @@ func (m *GetTopLevelComponentsByCarModelRequest) Reset() {
 func (m *GetTopLevelComponentsByCarModelRequest) String() string { return proto.CompactTextString(m) }
 func (*GetTopLevelComponentsByCarModelRequest) ProtoMessage()    {}
 func (*GetTopLevelComponentsByCarModelRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{8}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{13}
 }
 
 func (m *GetTopLevelComponentsByCarModelRequest) XXX_Unmarshal(b []byte) error {
@@ -436,7 +615,7 @@ func (m *GetChildComponentsByComponentRequest) Reset()         { *m = GetChildCo
 func (m *GetChildComponentsByComponentRequest) String() string { return proto.CompactTextString(m) }
 func (*GetChildComponentsByComponentRequest) ProtoMessage()    {}
 func (*GetChildComponentsByComponentRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{9}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{14}
 }
 
 func (m *GetChildComponentsByComponentRequest) XXX_Unmarshal(b []byte) error {
@@ -475,7 +654,7 @@ func (m *DeleteComponentRequest) Reset()         { *m = DeleteComponentRequest{}
 func (m *DeleteComponentRequest) String() string { return proto.CompactTextString(m) }
 func (*DeleteComponentRequest) ProtoMessage()    {}
 func (*DeleteComponentRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{10}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{15}
 }
 
 func (m *DeleteComponentRequest) XXX_Unmarshal(b []byte) error {
@@ -514,7 +693,7 @@ func (m *UpdateComponentRequest) Reset()         { *m = UpdateComponentRequest{}
 func (m *UpdateComponentRequest) String() string { return proto.CompactTextString(m) }
 func (*UpdateComponentRequest) ProtoMessage()    {}
 func (*UpdateComponentRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{11}
+	return fileDescriptor_6b2b0ccfa0821d94, []int{16}
 }
 
 func (m *UpdateComponentRequest) XXX_Unmarshal(b []byte) error {
@@ -542,88 +721,137 @@ func (m *UpdateComponentRequest) GetName() string {
 	return ""
 }
 
-type Empty struct {
+type DeleteComponentResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Empty) Reset()         { *m = Empty{} }
-func (m *Empty) String() string { return proto.CompactTextString(m) }
-func (*Empty) ProtoMessage()    {}
-func (*Empty) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6b2b0ccfa0821d94, []int{12}
+func (m *DeleteComponentResponse) Reset()         { *m = DeleteComponentResponse{} }
+func (m *DeleteComponentResponse) String() string { return proto.CompactTextString(m) }
+func (*DeleteComponentResponse) ProtoMessage()    {}
+func (*DeleteComponentResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{17}
 }
 
-func (m *Empty) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Empty.Unmarshal(m, b)
+func (m *DeleteComponentResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteComponentResponse.Unmarshal(m, b)
 }
-func (m *Empty) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Empty.Marshal(b, m, deterministic)
+func (m *DeleteComponentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteComponentResponse.Marshal(b, m, deterministic)
 }
-func (m *Empty) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Empty.Merge(m, src)
+func (m *DeleteComponentResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteComponentResponse.Merge(m, src)
 }
-func (m *Empty) XXX_Size() int {
-	return xxx_messageInfo_Empty.Size(m)
+func (m *DeleteComponentResponse) XXX_Size() int {
+	return xxx_messageInfo_DeleteComponentResponse.Size(m)
 }
-func (m *Empty) XXX_DiscardUnknown() {
-	xxx_messageInfo_Empty.DiscardUnknown(m)
+func (m *DeleteComponentResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteComponentResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Empty proto.InternalMessageInfo
+var xxx_messageInfo_DeleteComponentResponse proto.InternalMessageInfo
+
+type UpdateComponentResponse struct {
+	Result               *Component `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *UpdateComponentResponse) Reset()         { *m = UpdateComponentResponse{} }
+func (m *UpdateComponentResponse) String() string { return proto.CompactTextString(m) }
+func (*UpdateComponentResponse) ProtoMessage()    {}
+func (*UpdateComponentResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6b2b0ccfa0821d94, []int{18}
+}
+
+func (m *UpdateComponentResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UpdateComponentResponse.Unmarshal(m, b)
+}
+func (m *UpdateComponentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UpdateComponentResponse.Marshal(b, m, deterministic)
+}
+func (m *UpdateComponentResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UpdateComponentResponse.Merge(m, src)
+}
+func (m *UpdateComponentResponse) XXX_Size() int {
+	return xxx_messageInfo_UpdateComponentResponse.Size(m)
+}
+func (m *UpdateComponentResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_UpdateComponentResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_UpdateComponentResponse proto.InternalMessageInfo
+
+func (m *UpdateComponentResponse) GetResult() *Component {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
 
 func init() {
-	proto.RegisterType((*CreateCarModelRequest)(nil), "api.CreateCarModelRequest")
 	proto.RegisterType((*CarModel)(nil), "api.CarModel")
+	proto.RegisterType((*Component)(nil), "api.Component")
+	proto.RegisterType((*CreateCarModelRequest)(nil), "api.CreateCarModelRequest")
+	proto.RegisterType((*CreateCarModelResponse)(nil), "api.CreateCarModelResponse")
 	proto.RegisterType((*GetCarModelByIdRequest)(nil), "api.GetCarModelByIdRequest")
+	proto.RegisterType((*GetCarModelResponse)(nil), "api.GetCarModelResponse")
+	proto.RegisterType((*ListCarModelsRequst)(nil), "api.ListCarModelsRequst")
 	proto.RegisterType((*ListCarModelsResponse)(nil), "api.ListCarModelsResponse")
 	proto.RegisterType((*DeleteCarModelRequest)(nil), "api.DeleteCarModelRequest")
+	proto.RegisterType((*DeleteCarModelResponse)(nil), "api.DeleteCarModelResponse")
 	proto.RegisterType((*CreateComponentRequest)(nil), "api.CreateComponentRequest")
-	proto.RegisterType((*Component)(nil), "api.Component")
+	proto.RegisterType((*CreateComponentResponse)(nil), "api.CreateComponentResponse")
 	proto.RegisterType((*ListComponentResponse)(nil), "api.ListComponentResponse")
 	proto.RegisterType((*GetTopLevelComponentsByCarModelRequest)(nil), "api.GetTopLevelComponentsByCarModelRequest")
 	proto.RegisterType((*GetChildComponentsByComponentRequest)(nil), "api.GetChildComponentsByComponentRequest")
 	proto.RegisterType((*DeleteComponentRequest)(nil), "api.DeleteComponentRequest")
 	proto.RegisterType((*UpdateComponentRequest)(nil), "api.UpdateComponentRequest")
-	proto.RegisterType((*Empty)(nil), "api.Empty")
+	proto.RegisterType((*DeleteComponentResponse)(nil), "api.DeleteComponentResponse")
+	proto.RegisterType((*UpdateComponentResponse)(nil), "api.UpdateComponentResponse")
 }
 
 func init() { proto.RegisterFile("auto_catalog.proto", fileDescriptor_6b2b0ccfa0821d94) }
 
 var fileDescriptor_6b2b0ccfa0821d94 = []byte{
-	// 494 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x54, 0xc1, 0x6e, 0xd3, 0x40,
-	0x10, 0x8d, 0x93, 0x1a, 0x9a, 0x81, 0x26, 0xd2, 0x48, 0x89, 0x2a, 0x57, 0x88, 0x68, 0xa9, 0x20,
-	0xa8, 0x28, 0x87, 0x72, 0x02, 0xb5, 0x02, 0x1a, 0x50, 0x15, 0x54, 0x2e, 0x06, 0xce, 0xd1, 0x92,
-	0x1d, 0xd1, 0x15, 0xb6, 0x77, 0xb1, 0x37, 0x95, 0xf2, 0x41, 0xfc, 0x27, 0x8a, 0xbd, 0x31, 0xf1,
-	0xda, 0x6a, 0xc2, 0x2d, 0xca, 0xcc, 0xce, 0xbc, 0xf7, 0xe6, 0x3d, 0x03, 0xf2, 0xa5, 0x51, 0xf3,
-	0x05, 0x37, 0x3c, 0x52, 0x3f, 0x27, 0x3a, 0x55, 0x46, 0x61, 0x87, 0x6b, 0xc9, 0xce, 0x60, 0x30,
-	0x4d, 0x89, 0x1b, 0x9a, 0xf2, 0xf4, 0x8b, 0x12, 0x14, 0x85, 0xf4, 0x7b, 0x49, 0x99, 0x41, 0x84,
-	0x83, 0x84, 0xc7, 0x74, 0xec, 0x8d, 0xbc, 0x71, 0x37, 0xcc, 0x7f, 0xb3, 0x09, 0x1c, 0x6e, 0xda,
-	0xb0, 0x07, 0x6d, 0x29, 0xf2, 0xaa, 0x1f, 0xb6, 0xa5, 0x28, 0xfb, 0xdb, 0x5b, 0xfd, 0x63, 0x18,
-	0x5e, 0x93, 0xd9, 0x3c, 0xb9, 0x5a, 0xcd, 0xc4, 0x66, 0xba, 0xf3, 0x9a, 0x5d, 0xc0, 0xe0, 0x46,
-	0x66, 0x65, 0x6b, 0x16, 0x52, 0xa6, 0x55, 0x92, 0x11, 0x3e, 0x03, 0x5f, 0x1a, 0x8a, 0xb3, 0x63,
-	0x6f, 0xd4, 0x19, 0x3f, 0x3a, 0x3f, 0x9a, 0x70, 0x2d, 0x27, 0x25, 0xd6, 0xa2, 0xc6, 0x5e, 0xc0,
-	0xe0, 0x23, 0x45, 0x54, 0x27, 0xe1, 0xae, 0xf9, 0x05, 0x43, 0xcb, 0x56, 0xc5, 0x5a, 0x25, 0x94,
-	0x98, 0x7b, 0xe8, 0xe2, 0x08, 0x1e, 0x2f, 0x78, 0x3a, 0x8f, 0xd7, 0x13, 0xe7, 0x52, 0xe4, 0xd4,
-	0xfc, 0x10, 0x16, 0x76, 0xc9, 0x4c, 0xe0, 0x09, 0x74, 0x35, 0x4f, 0x29, 0x31, 0xeb, 0xf2, 0x41,
-	0x5e, 0x3e, 0x2c, 0xfe, 0x98, 0x09, 0x96, 0x40, 0xb7, 0x5c, 0xb3, 0x8f, 0x5c, 0xb5, 0x7d, 0x9d,
-	0xff, 0xdb, 0x77, 0x69, 0x35, 0xfc, 0x47, 0xcd, 0x6a, 0x78, 0x5a, 0xd5, 0xb0, 0x57, 0x68, 0x58,
-	0xb6, 0x59, 0x11, 0x3f, 0xc3, 0xf3, 0x6b, 0x32, 0xdf, 0x94, 0xbe, 0xa1, 0x3b, 0x8a, 0xca, 0x72,
-	0x76, 0xb5, 0x72, 0x55, 0x75, 0x71, 0x7a, 0x2e, 0x4e, 0x36, 0x85, 0xd3, 0xf5, 0xe1, 0x6f, 0x65,
-	0x24, 0x2a, 0x83, 0x5c, 0xd5, 0x2b, 0x7c, 0x3c, 0x87, 0xcf, 0x18, 0x86, 0xf6, 0xaa, 0xee, 0x33,
-	0xf7, 0xac, 0xaf, 0x60, 0xf8, 0x5d, 0x8b, 0x3d, 0xcf, 0xca, 0x1e, 0x82, 0xff, 0x29, 0xd6, 0x66,
-	0x75, 0xfe, 0xc7, 0x07, 0xfc, 0xb0, 0x34, 0x6a, 0x5a, 0xc4, 0xe2, 0x2b, 0xa5, 0x77, 0x72, 0x41,
-	0x78, 0x09, 0xbd, 0x6a, 0x24, 0x30, 0x28, 0x14, 0x6b, 0xca, 0x49, 0x50, 0x75, 0x24, 0x6b, 0xe1,
-	0x3b, 0xe8, 0x3b, 0xa6, 0xc7, 0x93, 0xbc, 0xa7, 0x39, 0x0a, 0xf5, 0x01, 0x6f, 0xe0, 0xa8, 0x92,
-	0x05, 0x84, 0xbc, 0x23, 0xc7, 0x1c, 0x14, 0x50, 0x1a, 0xb3, 0xc2, 0x5a, 0xf8, 0x16, 0x7a, 0xd5,
-	0x20, 0x58, 0xe8, 0x8d, 0xe9, 0x08, 0xb6, 0xe6, 0xb2, 0x16, 0xbe, 0x87, 0xbe, 0x93, 0x0d, 0x8b,
-	0xbb, 0x39, 0x31, 0x81, 0x63, 0x23, 0xd6, 0xc2, 0x08, 0x9e, 0xee, 0x70, 0x10, 0x9e, 0x6d, 0x94,
-	0xd8, 0xc3, 0x67, 0xdb, 0x5c, 0x5d, 0x4f, 0xb3, 0x16, 0xde, 0xc2, 0x93, 0x7b, 0x3d, 0x86, 0x2f,
-	0x4b, 0xd5, 0x77, 0xf9, 0x70, 0xc7, 0xa6, 0x0b, 0xe8, 0x3b, 0x46, 0xb4, 0xca, 0x34, 0xdb, 0xb3,
-	0xae, 0xab, 0x63, 0x4e, 0xfb, 0xba, 0xd9, 0xb2, 0x75, 0x5d, 0x7f, 0x3c, 0xc8, 0xbf, 0xd7, 0xaf,
-	0xff, 0x06, 0x00, 0x00, 0xff, 0xff, 0xe2, 0xd7, 0xb7, 0x11, 0xc5, 0x05, 0x00, 0x00,
+	// 547 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x55, 0x5d, 0x6f, 0x12, 0x41,
+	0x14, 0x65, 0xa1, 0x92, 0x72, 0xb5, 0x90, 0xdc, 0x86, 0x0f, 0xb7, 0x1a, 0xc9, 0x44, 0x2b, 0xa6,
+	0x86, 0x87, 0xfa, 0x6a, 0x6c, 0x28, 0x26, 0x84, 0xb6, 0xf6, 0x01, 0xf5, 0x99, 0x8c, 0xec, 0xc4,
+	0x6e, 0x5c, 0x76, 0xd6, 0xdd, 0xa1, 0x49, 0x7f, 0x83, 0x7f, 0xda, 0xb0, 0x3b, 0x3b, 0x61, 0x2f,
+	0xc3, 0xd7, 0x1b, 0x99, 0x7b, 0xe7, 0x9c, 0xb9, 0xe7, 0xdc, 0xc3, 0x02, 0xf2, 0x85, 0x92, 0xd3,
+	0x19, 0x57, 0x3c, 0x90, 0xbf, 0xfb, 0x51, 0x2c, 0x95, 0xc4, 0x0a, 0x8f, 0x7c, 0xd6, 0x87, 0xe3,
+	0x21, 0x8f, 0xbf, 0x49, 0x4f, 0x04, 0x58, 0x87, 0xb2, 0xef, 0x75, 0x9c, 0xae, 0xd3, 0x7b, 0x36,
+	0x29, 0xfb, 0x1e, 0x22, 0x1c, 0x85, 0x7c, 0x2e, 0x3a, 0xe5, 0xae, 0xd3, 0xab, 0x4d, 0xd2, 0xdf,
+	0x2c, 0x84, 0xda, 0x50, 0xce, 0x23, 0x19, 0x8a, 0x50, 0xed, 0x73, 0x01, 0xbb, 0xf0, 0x62, 0xc6,
+	0xe3, 0xe9, 0x7c, 0xc9, 0x30, 0xf5, 0xbd, 0x4e, 0x25, 0xed, 0x86, 0x99, 0x26, 0x1d, 0x7b, 0x78,
+	0x06, 0xb5, 0x88, 0xc7, 0x22, 0x54, 0xcb, 0xf2, 0x51, 0x5a, 0x3e, 0xce, 0x0e, 0xc6, 0x1e, 0xbb,
+	0x80, 0xe6, 0x30, 0x16, 0x5c, 0x89, 0xfc, 0x95, 0x13, 0xf1, 0x77, 0x21, 0x12, 0x65, 0xb8, 0x9c,
+	0x95, 0xc7, 0x5d, 0x41, 0x8b, 0x36, 0x27, 0x91, 0x0c, 0x13, 0x81, 0xef, 0xa0, 0x1a, 0x8b, 0x64,
+	0x11, 0xa8, 0xb4, 0xff, 0xf9, 0xe5, 0x49, 0x9f, 0x47, 0x7e, 0xdf, 0xb4, 0xe9, 0x22, 0xeb, 0x41,
+	0x6b, 0x24, 0x54, 0x7e, 0x7c, 0xfd, 0x34, 0xf6, 0x72, 0x3a, 0x32, 0x2a, 0xfb, 0x0c, 0xa7, 0x2b,
+	0x9d, 0x87, 0xf2, 0x34, 0xe1, 0xf4, 0xce, 0x4f, 0xcc, 0xf5, 0x64, 0xc9, 0x92, 0x28, 0xf6, 0x05,
+	0x9a, 0xe4, 0xd8, 0x02, 0x5b, 0xd9, 0x0c, 0xfb, 0x1e, 0x9a, 0x5f, 0x45, 0x20, 0xd6, 0xc5, 0xa2,
+	0xaf, 0xef, 0x40, 0x8b, 0x36, 0x66, 0x4c, 0xec, 0x8f, 0x91, 0x30, 0x77, 0x79, 0x8b, 0xe0, 0x6b,
+	0xe6, 0x96, 0x0f, 0x33, 0x77, 0x00, 0xed, 0x35, 0x32, 0x3d, 0xf1, 0x39, 0x11, 0xb2, 0x9e, 0x4d,
+	0x6c, 0xfa, 0xf2, 0x91, 0xaf, 0xb4, 0x64, 0x5b, 0x01, 0x2a, 0x5b, 0x00, 0x6e, 0xe0, 0x7c, 0x24,
+	0xd4, 0x0f, 0x19, 0xdd, 0x89, 0x47, 0x11, 0x98, 0x7a, 0x72, 0xfd, 0x44, 0x45, 0xa4, 0xc3, 0x3a,
+	0x74, 0x58, 0x36, 0x84, 0xb7, 0xcb, 0xa5, 0x78, 0xf0, 0x03, 0xaf, 0x00, 0x44, 0xa5, 0x2c, 0x88,
+	0xe2, 0x10, 0x51, 0x7a, 0xc6, 0x1b, 0x7a, 0x8d, 0xba, 0xf8, 0x11, 0x5a, 0x3f, 0x23, 0x6f, 0x4f,
+	0xaf, 0xd8, 0x4b, 0x68, 0xaf, 0xe1, 0x6a, 0xd3, 0x07, 0xd0, 0x5e, 0x03, 0x3a, 0xcc, 0x87, 0xcb,
+	0x7f, 0x55, 0xc0, 0xc1, 0x42, 0xc9, 0x61, 0xf6, 0x17, 0xf3, 0x5d, 0xc4, 0x8f, 0xfe, 0x4c, 0xe0,
+	0x2d, 0xd4, 0x8b, 0x89, 0x44, 0x37, 0x03, 0xb0, 0x65, 0xda, 0x3d, 0xb3, 0xd6, 0xf4, 0x23, 0x4b,
+	0x78, 0x03, 0x0d, 0x92, 0x4e, 0xcc, 0x6e, 0xd8, 0x33, 0xeb, 0x76, 0x68, 0x71, 0x05, 0x6b, 0x04,
+	0x27, 0x85, 0xa8, 0x61, 0xd6, 0x6c, 0x49, 0xa5, 0xeb, 0xda, 0x2a, 0x06, 0xe8, 0x16, 0xea, 0xc5,
+	0x28, 0xe9, 0x09, 0xad, 0x41, 0xd4, 0x13, 0x6e, 0xc8, 0x5e, 0x09, 0xef, 0xa1, 0x41, 0x02, 0x81,
+	0x05, 0x4d, 0x88, 0xcf, 0xee, 0x2b, 0x7b, 0xd1, 0xe0, 0x05, 0xf0, 0x66, 0xc7, 0x72, 0xe3, 0x45,
+	0x2e, 0xd2, 0x1e, 0x11, 0x58, 0x95, 0xc2, 0xc2, 0xf6, 0x00, 0xaf, 0xb7, 0xae, 0x3f, 0x7e, 0x30,
+	0x86, 0xec, 0x8a, 0xc8, 0x0e, 0xa6, 0x7b, 0x68, 0x90, 0x5d, 0xc6, 0x82, 0xb2, 0x76, 0x9d, 0x36,
+	0xad, 0x7f, 0x8a, 0x47, 0x02, 0xa0, 0xf1, 0xec, 0xf9, 0xd2, 0x78, 0x1b, 0x32, 0xc3, 0x4a, 0xbf,
+	0xaa, 0xe9, 0x17, 0xf6, 0xd3, 0xff, 0x00, 0x00, 0x00, 0xff, 0xff, 0xc1, 0x3c, 0xee, 0x00, 0x77,
+	0x07, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -638,15 +866,15 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type AutoCatalogServiceClient interface {
-	CreateCarModel(ctx context.Context, in *CreateCarModelRequest, opts ...grpc.CallOption) (*CarModel, error)
-	GetCarModelById(ctx context.Context, in *GetCarModelByIdRequest, opts ...grpc.CallOption) (*CarModel, error)
-	ListCarModels(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*ListCarModelsResponse, error)
-	DeleteCarModel(ctx context.Context, in *DeleteCarModelRequest, opts ...grpc.CallOption) (*Empty, error)
-	CreateComponent(ctx context.Context, in *CreateComponentRequest, opts ...grpc.CallOption) (*Component, error)
+	CreateCarModel(ctx context.Context, in *CreateCarModelRequest, opts ...grpc.CallOption) (*CreateCarModelResponse, error)
+	GetCarModelById(ctx context.Context, in *GetCarModelByIdRequest, opts ...grpc.CallOption) (*GetCarModelResponse, error)
+	ListCarModels(ctx context.Context, in *ListCarModelsRequst, opts ...grpc.CallOption) (*ListCarModelsResponse, error)
+	DeleteCarModel(ctx context.Context, in *DeleteCarModelRequest, opts ...grpc.CallOption) (*DeleteCarModelResponse, error)
+	CreateComponent(ctx context.Context, in *CreateComponentRequest, opts ...grpc.CallOption) (*CreateComponentResponse, error)
 	GetTopLevelComponentsByCarModel(ctx context.Context, in *GetTopLevelComponentsByCarModelRequest, opts ...grpc.CallOption) (*ListComponentResponse, error)
 	GetChildComponentsByComponent(ctx context.Context, in *GetChildComponentsByComponentRequest, opts ...grpc.CallOption) (*ListComponentResponse, error)
-	DeleteComponent(ctx context.Context, in *DeleteComponentRequest, opts ...grpc.CallOption) (*Empty, error)
-	UpdateComponent(ctx context.Context, in *UpdateComponentRequest, opts ...grpc.CallOption) (*Component, error)
+	DeleteComponent(ctx context.Context, in *DeleteComponentRequest, opts ...grpc.CallOption) (*DeleteComponentResponse, error)
+	UpdateComponent(ctx context.Context, in *UpdateComponentRequest, opts ...grpc.CallOption) (*UpdateComponentResponse, error)
 }
 
 type autoCatalogServiceClient struct {
@@ -657,8 +885,8 @@ func NewAutoCatalogServiceClient(cc *grpc.ClientConn) AutoCatalogServiceClient {
 	return &autoCatalogServiceClient{cc}
 }
 
-func (c *autoCatalogServiceClient) CreateCarModel(ctx context.Context, in *CreateCarModelRequest, opts ...grpc.CallOption) (*CarModel, error) {
-	out := new(CarModel)
+func (c *autoCatalogServiceClient) CreateCarModel(ctx context.Context, in *CreateCarModelRequest, opts ...grpc.CallOption) (*CreateCarModelResponse, error) {
+	out := new(CreateCarModelResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/CreateCarModel", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -666,8 +894,8 @@ func (c *autoCatalogServiceClient) CreateCarModel(ctx context.Context, in *Creat
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) GetCarModelById(ctx context.Context, in *GetCarModelByIdRequest, opts ...grpc.CallOption) (*CarModel, error) {
-	out := new(CarModel)
+func (c *autoCatalogServiceClient) GetCarModelById(ctx context.Context, in *GetCarModelByIdRequest, opts ...grpc.CallOption) (*GetCarModelResponse, error) {
+	out := new(GetCarModelResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/GetCarModelById", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -675,7 +903,7 @@ func (c *autoCatalogServiceClient) GetCarModelById(ctx context.Context, in *GetC
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) ListCarModels(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*ListCarModelsResponse, error) {
+func (c *autoCatalogServiceClient) ListCarModels(ctx context.Context, in *ListCarModelsRequst, opts ...grpc.CallOption) (*ListCarModelsResponse, error) {
 	out := new(ListCarModelsResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/ListCarModels", in, out, opts...)
 	if err != nil {
@@ -684,8 +912,8 @@ func (c *autoCatalogServiceClient) ListCarModels(ctx context.Context, in *Empty,
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) DeleteCarModel(ctx context.Context, in *DeleteCarModelRequest, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *autoCatalogServiceClient) DeleteCarModel(ctx context.Context, in *DeleteCarModelRequest, opts ...grpc.CallOption) (*DeleteCarModelResponse, error) {
+	out := new(DeleteCarModelResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/DeleteCarModel", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -693,8 +921,8 @@ func (c *autoCatalogServiceClient) DeleteCarModel(ctx context.Context, in *Delet
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) CreateComponent(ctx context.Context, in *CreateComponentRequest, opts ...grpc.CallOption) (*Component, error) {
-	out := new(Component)
+func (c *autoCatalogServiceClient) CreateComponent(ctx context.Context, in *CreateComponentRequest, opts ...grpc.CallOption) (*CreateComponentResponse, error) {
+	out := new(CreateComponentResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/CreateComponent", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -720,8 +948,8 @@ func (c *autoCatalogServiceClient) GetChildComponentsByComponent(ctx context.Con
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) DeleteComponent(ctx context.Context, in *DeleteComponentRequest, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
+func (c *autoCatalogServiceClient) DeleteComponent(ctx context.Context, in *DeleteComponentRequest, opts ...grpc.CallOption) (*DeleteComponentResponse, error) {
+	out := new(DeleteComponentResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/DeleteComponent", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -729,8 +957,8 @@ func (c *autoCatalogServiceClient) DeleteComponent(ctx context.Context, in *Dele
 	return out, nil
 }
 
-func (c *autoCatalogServiceClient) UpdateComponent(ctx context.Context, in *UpdateComponentRequest, opts ...grpc.CallOption) (*Component, error) {
-	out := new(Component)
+func (c *autoCatalogServiceClient) UpdateComponent(ctx context.Context, in *UpdateComponentRequest, opts ...grpc.CallOption) (*UpdateComponentResponse, error) {
+	out := new(UpdateComponentResponse)
 	err := c.cc.Invoke(ctx, "/api.AutoCatalogService/UpdateComponent", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -740,34 +968,34 @@ func (c *autoCatalogServiceClient) UpdateComponent(ctx context.Context, in *Upda
 
 // AutoCatalogServiceServer is the server API for AutoCatalogService service.
 type AutoCatalogServiceServer interface {
-	CreateCarModel(context.Context, *CreateCarModelRequest) (*CarModel, error)
-	GetCarModelById(context.Context, *GetCarModelByIdRequest) (*CarModel, error)
-	ListCarModels(context.Context, *Empty) (*ListCarModelsResponse, error)
-	DeleteCarModel(context.Context, *DeleteCarModelRequest) (*Empty, error)
-	CreateComponent(context.Context, *CreateComponentRequest) (*Component, error)
+	CreateCarModel(context.Context, *CreateCarModelRequest) (*CreateCarModelResponse, error)
+	GetCarModelById(context.Context, *GetCarModelByIdRequest) (*GetCarModelResponse, error)
+	ListCarModels(context.Context, *ListCarModelsRequst) (*ListCarModelsResponse, error)
+	DeleteCarModel(context.Context, *DeleteCarModelRequest) (*DeleteCarModelResponse, error)
+	CreateComponent(context.Context, *CreateComponentRequest) (*CreateComponentResponse, error)
 	GetTopLevelComponentsByCarModel(context.Context, *GetTopLevelComponentsByCarModelRequest) (*ListComponentResponse, error)
 	GetChildComponentsByComponent(context.Context, *GetChildComponentsByComponentRequest) (*ListComponentResponse, error)
-	DeleteComponent(context.Context, *DeleteComponentRequest) (*Empty, error)
-	UpdateComponent(context.Context, *UpdateComponentRequest) (*Component, error)
+	DeleteComponent(context.Context, *DeleteComponentRequest) (*DeleteComponentResponse, error)
+	UpdateComponent(context.Context, *UpdateComponentRequest) (*UpdateComponentResponse, error)
 }
 
 // UnimplementedAutoCatalogServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedAutoCatalogServiceServer struct {
 }
 
-func (*UnimplementedAutoCatalogServiceServer) CreateCarModel(ctx context.Context, req *CreateCarModelRequest) (*CarModel, error) {
+func (*UnimplementedAutoCatalogServiceServer) CreateCarModel(ctx context.Context, req *CreateCarModelRequest) (*CreateCarModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCarModel not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) GetCarModelById(ctx context.Context, req *GetCarModelByIdRequest) (*CarModel, error) {
+func (*UnimplementedAutoCatalogServiceServer) GetCarModelById(ctx context.Context, req *GetCarModelByIdRequest) (*GetCarModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCarModelById not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) ListCarModels(ctx context.Context, req *Empty) (*ListCarModelsResponse, error) {
+func (*UnimplementedAutoCatalogServiceServer) ListCarModels(ctx context.Context, req *ListCarModelsRequst) (*ListCarModelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCarModels not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) DeleteCarModel(ctx context.Context, req *DeleteCarModelRequest) (*Empty, error) {
+func (*UnimplementedAutoCatalogServiceServer) DeleteCarModel(ctx context.Context, req *DeleteCarModelRequest) (*DeleteCarModelResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCarModel not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) CreateComponent(ctx context.Context, req *CreateComponentRequest) (*Component, error) {
+func (*UnimplementedAutoCatalogServiceServer) CreateComponent(ctx context.Context, req *CreateComponentRequest) (*CreateComponentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateComponent not implemented")
 }
 func (*UnimplementedAutoCatalogServiceServer) GetTopLevelComponentsByCarModel(ctx context.Context, req *GetTopLevelComponentsByCarModelRequest) (*ListComponentResponse, error) {
@@ -776,10 +1004,10 @@ func (*UnimplementedAutoCatalogServiceServer) GetTopLevelComponentsByCarModel(ct
 func (*UnimplementedAutoCatalogServiceServer) GetChildComponentsByComponent(ctx context.Context, req *GetChildComponentsByComponentRequest) (*ListComponentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChildComponentsByComponent not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) DeleteComponent(ctx context.Context, req *DeleteComponentRequest) (*Empty, error) {
+func (*UnimplementedAutoCatalogServiceServer) DeleteComponent(ctx context.Context, req *DeleteComponentRequest) (*DeleteComponentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteComponent not implemented")
 }
-func (*UnimplementedAutoCatalogServiceServer) UpdateComponent(ctx context.Context, req *UpdateComponentRequest) (*Component, error) {
+func (*UnimplementedAutoCatalogServiceServer) UpdateComponent(ctx context.Context, req *UpdateComponentRequest) (*UpdateComponentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateComponent not implemented")
 }
 
@@ -824,7 +1052,7 @@ func _AutoCatalogService_GetCarModelById_Handler(srv interface{}, ctx context.Co
 }
 
 func _AutoCatalogService_ListCarModels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(ListCarModelsRequst)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -836,7 +1064,7 @@ func _AutoCatalogService_ListCarModels_Handler(srv interface{}, ctx context.Cont
 		FullMethod: "/api.AutoCatalogService/ListCarModels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AutoCatalogServiceServer).ListCarModels(ctx, req.(*Empty))
+		return srv.(AutoCatalogServiceServer).ListCarModels(ctx, req.(*ListCarModelsRequst))
 	}
 	return interceptor(ctx, in, info, handler)
 }
