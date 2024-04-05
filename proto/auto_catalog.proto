@@ -69,7 +69,8 @@ message DeleteComponentRequest {
 }
 
 message UpdateComponentRequest {
-    string name = 1;
+    int32 id = 1;
+    string name = 2;
 }
 
 message DeleteComponentResponse {}

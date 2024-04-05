@@ -28,12 +28,12 @@ RETURNING *;
 
 -- name: GetTopLevelComponentsByCarModel :many
 SELECT * FROM component
-WHERE car_model_id = $1 LIMIT 1;
+WHERE car_model_id = $1;
 
 
 -- name: GetChildComponentsByComponent :many
 SELECT * FROM component
-WHERE parent_id = $1 LIMIT 1;
+WHERE parent_id = $1;
 
 -- name: DeleteComponent :exec
 DELETE FROM component
@@ -41,5 +41,6 @@ WHERE id = $1;
 
 -- name: UpdateComponent :one
 UPDATE component
-SET name = $1
+SET name = $2
+WHERE id = $1
 RETURNING *;

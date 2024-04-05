@@ -88,7 +88,7 @@ func (q *Queries) GetCarModel(ctx context.Context, id int64) (CarModel, error) {
 
 const getChildComponentsByComponent = `-- name: GetChildComponentsByComponent :many
 SELECT id, name, car_model_id, parent_id FROM component
-WHERE parent_id = $1 LIMIT 1
+WHERE parent_id = $1
 `
 
 func (q *Queries) GetChildComponentsByComponent(ctx context.Context, parentID pgtype.Int4) ([]Component, error) {
@@ -118,7 +118,7 @@ func (q *Queries) GetChildComponentsByComponent(ctx context.Context, parentID pg
 
 const getTopLevelComponentsByCarModel = `-- name: GetTopLevelComponentsByCarModel :many
 SELECT id, name, car_model_id, parent_id FROM component
-WHERE car_model_id = $1 LIMIT 1
+WHERE car_model_id = $1
 `
 
 func (q *Queries) GetTopLevelComponentsByCarModel(ctx context.Context, carModelID pgtype.Int4) ([]Component, error) {
@@ -173,12 +173,18 @@ func (q *Queries) ListCarModels(ctx context.Context) ([]CarModel, error) {
 
 const updateComponent = `-- name: UpdateComponent :one
 UPDATE component
-SET name = $1
+SET name = $2
+WHERE id = $1
 RETURNING id, name, car_model_id, parent_id
 `
 
-func (q *Queries) UpdateComponent(ctx context.Context, name string) (Component, error) {
-	row := q.db.QueryRow(ctx, updateComponent, name)
+type UpdateComponentParams struct {
+	ID   int64
+	Name string
+}
+
+func (q *Queries) UpdateComponent(ctx context.Context, arg UpdateComponentParams) (Component, error) {
+	row := q.db.QueryRow(ctx, updateComponent, arg.ID, arg.Name)
 	var i Component
 	err := row.Scan(
 		&i.ID,
