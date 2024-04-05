@@ -153,7 +153,11 @@ func (server *GRPCServer) DeleteComponent(ctx context.Context, req *api.DeleteCo
 }
 
 func (server *GRPCServer) UpdateComponent(ctx context.Context, req *api.UpdateComponentRequest) (*api.UpdateComponentResponse, error) {
-	rec, err := server.Store.Queries.UpdateComponent(ctx, req.Name)
+	params := sqlc.UpdateComponentParams{
+		ID:   int64(req.GetId()),
+		Name: req.GetName(),
+	}
+	rec, err := server.Store.Queries.UpdateComponent(ctx, params)
 	if err != nil {
 		return nil, err
 	}
