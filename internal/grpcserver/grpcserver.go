@@ -18,7 +18,7 @@ func New(st *store.Store) *GRPCServer {
 }
 
 func (server *GRPCServer) CreateCarModel(ctx context.Context, req *api.CreateCarModelRequest) (*api.CreateCarModelResponse, error) {
-	rec, err := server.Store.Queries.CreateCarModel(ctx, req.Name)
+	rec, err := server.Store.Queries.CreateCarModel(ctx, req.GetName())
 
 	if err != nil {
 		return nil, err
@@ -33,7 +33,7 @@ func (server *GRPCServer) CreateCarModel(ctx context.Context, req *api.CreateCar
 }
 
 func (server *GRPCServer) GetCarModelById(ctx context.Context, req *api.GetCarModelByIdRequest) (*api.GetCarModelResponse, error) {
-	rec, err := server.Store.Queries.GetCarModel(ctx, int64(req.Id))
+	rec, err := server.Store.Queries.GetCarModel(ctx, int64(req.GetId()))
 
 	if err != nil {
 		return nil, err
@@ -67,7 +67,7 @@ func (server *GRPCServer) ListCarModels(ctx context.Context, req *api.ListCarMod
 }
 
 func (server *GRPCServer) DeleteCarModel(ctx context.Context, req *api.DeleteCarModelRequest) (*api.DeleteCarModelResponse, error) {
-	err := server.Store.Queries.DeleteCarModel(ctx, int64(req.Id))
+	err := server.Store.Queries.DeleteCarModel(ctx, int64(req.GetId()))
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (server *GRPCServer) DeleteCarModel(ctx context.Context, req *api.DeleteCar
 
 func (server *GRPCServer) GetTopLevelComponentsByCarModel(ctx context.Context, req *api.GetTopLevelComponentsByCarModelRequest) (*api.ListComponentResponse, error) {
 
-	rec, err := server.Store.Queries.GetTopLevelComponentsByCarModel(ctx, pgtype.Int4{Int32: req.CarModelId, Valid: true})
+	rec, err := server.Store.Queries.GetTopLevelComponentsByCarModel(ctx, pgtype.Int4{Int32: req.GetCarModelId(), Valid: true})
 	if err != nil {
 		return nil, err
 	}
@@ -98,13 +98,13 @@ func (server *GRPCServer) GetTopLevelComponentsByCarModel(ctx context.Context, r
 
 func (server *GRPCServer) CreateComponent(ctx context.Context, req *api.CreateComponentRequest) (*api.CreateComponentResponse, error) {
 	params := sqlc.CreateComponentParams{
-		Name: req.Name,
+		Name: req.GetName(),
 	}
 
-	if req.CarModelId != 0 {
-		params.CarModelID = pgtype.Int4{Int32: req.CarModelId, Valid: true}
-	} else if req.ParentId != 0 {
-		params.ParentID = pgtype.Int4{Int32: req.ParentId, Valid: true}
+	if req.GetCarModelId() != 0 {
+		params.CarModelID = pgtype.Int4{Int32: req.GetCarModelId(), Valid: true}
+	} else if req.GetParentId() != 0 {
+		params.ParentID = pgtype.Int4{Int32: req.GetParentId(), Valid: true}
 	}
 	rec, err := server.Store.Queries.CreateComponent(ctx, params)
 
@@ -124,7 +124,7 @@ func (server *GRPCServer) CreateComponent(ctx context.Context, req *api.CreateCo
 
 func (server *GRPCServer) GetChildComponentsByComponent(ctx context.Context, req *api.GetChildComponentsByComponentRequest) (*api.ListComponentResponse, error) {
 
-	rec, err := server.Store.Queries.GetChildComponentsByComponent(ctx, pgtype.Int4{Int32: req.ParentId, Valid: true})
+	rec, err := server.Store.Queries.GetChildComponentsByComponent(ctx, pgtype.Int4{Int32: req.GetParentId(), Valid: true})
 	if err != nil {
 		return nil, err
 	}
@@ -144,7 +144,7 @@ func (server *GRPCServer) GetChildComponentsByComponent(ctx context.Context, req
 }
 
 func (server *GRPCServer) DeleteComponent(ctx context.Context, req *api.DeleteComponentRequest) (*api.DeleteComponentResponse, error) {
-	err := server.Store.Queries.DeleteComponent(ctx, int64(req.Id))
+	err := server.Store.Queries.DeleteComponent(ctx, int64(req.GetId()))
 	if err != nil {
 		return nil, err
 	}
