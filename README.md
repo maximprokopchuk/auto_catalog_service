@@ -5,6 +5,7 @@
 - Protobuf - https://protobuf.dev/
 - GRPC - https://grpc.io/docs/languages/go/quickstart/
 - SQLC - https://sqlc.dev/
+- Goose - https://github.com/pressly/goose
 
 ## Usage
 
@@ -59,4 +60,11 @@ Run linter:
 
 ``` bash:
 make lint
+```
+
+## Database migrations
+
+``` bash:
+cd ./migrations
+goose postgres "user=<user name> password=<password> dbname=<dbname> sslmode=disable" up
 ```
